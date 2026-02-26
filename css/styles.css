@@ -10970,3 +10970,82 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+/* Theme override: replace the default orange accent with Carolina blue */
+:root {
+  --carolina-blue: #99BADD;
+  --carolina-blue-hover: #7FA8D3;
+  --carolina-blue-soft: #EAF2FB;
+  --carolina-blue-focus: rgba(153, 186, 221, 0.25);
+  --carolina-blue-dark: #1F3552;
+  --bs-primary: #99BADD;
+  --bs-primary-rgb: 153, 186, 221;
+  --bs-link-color: #99BADD;
+  --bs-link-hover-color: #7FA8D3;
+}
+
+.bg-primary,
+.btn-primary,
+.form-check-input:checked,
+.form-range::-webkit-slider-thumb,
+.form-range::-moz-range-thumb,
+.social-icons .social-icon:hover {
+  background-color: var(--carolina-blue) !important;
+  border-color: var(--carolina-blue) !important;
+}
+
+.text-primary,
+.link-primary {
+  color: var(--carolina-blue) !important;
+}
+
+.link-primary:hover,
+.link-primary:focus,
+a:hover,
+a:focus {
+  color: var(--carolina-blue-hover) !important;
+}
+
+.btn-outline-primary {
+  color: var(--carolina-blue) !important;
+  border-color: var(--carolina-blue) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: var(--carolina-blue) !important;
+  border-color: var(--carolina-blue) !important;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus,
+.btn-close:focus,
+#sideNav .navbar-toggler:focus {
+  border-color: var(--carolina-blue) !important;
+  box-shadow: 0 0 0 0.25rem var(--carolina-blue-focus) !important;
+  outline-color: var(--carolina-blue-hover) !important;
+}
+
+.form-range:focus::-webkit-slider-thumb,
+.form-range:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem var(--carolina-blue-focus) !important;
+}
+
+.form-range::-webkit-slider-thumb:active,
+.form-range::-moz-range-thumb:active,
+.alert-primary,
+.list-group-item-primary {
+  background-color: var(--carolina-blue-soft) !important;
+}
+
+#sideNav .navbar-brand,
+#sideNav .navbar-nav .nav-item .nav-link {
+  color: var(--carolina-blue-dark);
+}
+
+#sideNav .navbar-nav .nav-item .nav-link:hover,
+#sideNav .navbar-nav .nav-item .nav-link:focus {
+  color: #fff;
+}
