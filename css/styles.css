@@ -11049,3 +11049,14 @@ a:focus {
 #sideNav .navbar-nav .nav-item .nav-link:focus {
   color: #fff;
 }
+
+.company-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  border-radius: 0.25rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
