@@ -11060,3 +11060,11 @@ a:focus {
   background-color: #f8f9fa;
   border: 1px solid #dee2e6;
 }
+
+.institution-logo {
+  margin-top: -0.2rem;
+}
+
+.awards-group + .awards-group {
+  margin-top: 2.5rem;
+}
