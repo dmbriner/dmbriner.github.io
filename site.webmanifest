@@ -7,14 +7,9 @@
     "theme_color": "#ffffff",
     "icons": [
         {
-            "src": "/assets/img/weblogo-20260302.png?v=20260302",
-            "sizes": "512x512",
-            "type": "image/png"
-        },
-        {
-            "src": "/assets/img/apple-touch-icon-20260302.png?v=20260302",
-            "sizes": "512x512",
-            "type": "image/png"
+            "src": "/assets/img/db-mark.svg?v=20260302",
+            "sizes": "any",
+            "type": "image/svg+xml"
         }
     ]
 }

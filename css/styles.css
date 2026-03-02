@@ -90,9 +90,7 @@ textarea {
 .brand-mark {
     width: 46px;
     height: 46px;
-    border-radius: 14px;
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-soft);
+    object-fit: contain;
 }
 
 .brand-copy {
@@ -491,12 +489,43 @@ textarea {
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+    color: inherit;
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .portfolio-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-soft);
+}
+
+.detail-shell {
+    display: grid;
+    gap: 24px;
+}
+
+.detail-summary {
+    margin: 0;
+}
+
+.detail-body {
+    display: grid;
+    gap: 14px;
+}
+
+.detail-embed {
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: var(--shadow-soft);
+}
+
+.embedded-frame {
+    display: block;
+    width: 100%;
+    min-height: 860px;
+    border: 0;
+    background: #ffffff;
 }
 
 .portfolio-link {
@@ -701,6 +730,10 @@ textarea {
 
     .tab-button {
         flex: 1 1 calc(50% - 10px);
+    }
+
+    .embedded-frame {
+        min-height: 620px;
     }
 }
 

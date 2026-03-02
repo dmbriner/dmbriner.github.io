@@ -5,7 +5,7 @@ window.siteData = {
         email: "dbriner@unc.edu",
         phone: "(984) 484-1862",
         location: "Chapel Hill, NC",
-        logo: "/assets/img/weblogo-20260302.png",
+        logo: "/assets/img/db-mark.svg",
         profileImage: "/assets/img/profile.jpg",
         linkedin: "https://www.linkedin.com/in/dana-briner-5461b6202",
         linkedinLabel: "dana-briner-5461b6202",
@@ -23,7 +23,7 @@ window.siteData = {
         bio: "First-year student at UNC Chapel Hill pursuing a B.A. in Business Administration with a concentration in Finance, a B.A. in Physics on the Quantitative Finance track, and a minor in Data Science. Experienced in financial regulation through research on Glass-Steagall, Gramm-Leach-Bliley, and Dodd-Frank, evaluating how regulatory shifts recalibrate market dynamics without altering underlying profit motives or managerial incentives, redirecting rather than resolving systemic vulnerability. Work at the North Carolina Chamber of Commerce extended this foundation, as the organization sits at the intersection of regulation and market dynamics. Research involved compiling skills taxonomies and NC labor-force data, which I found particularly engaging. Alongside a strong background in physics, statistics, and mathematics, this experience pushed my interests toward more quantitative, market-facing sectors of finance.",
         metrics: [
             { value: "4.00", label: "Current GPA at UNC Chapel Hill" },
-            { value: "2", label: "Published research papers currently available on-site" },
+            { value: "Now", label: "Building products, research, and valuation work in parallel" },
             { value: "3", label: "Core academic areas: finance, physics, and data science" }
         ]
     },
@@ -132,18 +132,36 @@ window.siteData = {
                 description: "Software, product, and technical workflow work grouped under a cleaner single label.",
                 items: [
                     {
-                        title: "Variant Platform Workflow Testing",
-                        meta: "Fintech / Hedge Fund Analytics",
-                        tag: "Product",
-                        description: "Execute software testing across core platform workflows, identify bugs, and improve reliability across the startup's user-facing product surface.",
-                        href: "https://github.com/dmbriner"
+                        id: "tickr",
+                        title: "Tickr",
+                        meta: "In Progress · Product and Market Intelligence Platform",
+                        tag: "Build",
+                        description: "Tickr is an in-progress product I am building to move toward a cleaner, faster, more intuitive market research experience. It is intended to function as a modern investing and trading workspace with strong data presentation, streamlined workflows, and a more self-directed alternative to the tools I use today.",
+                        detailPath: "/portfolio/item/?id=tickr",
+                        contentType: "external-preview",
+                        embedSrc: "https://dmbriner.github.io/tickr/",
+                        embedLabel: "Tickr Preview",
+                        links: [
+                            { label: "Open Live Preview", url: "https://dmbriner.github.io/tickr/" },
+                            { label: "View GitHub Repository", url: "https://github.com/dmbriner/tickr" }
+                        ]
                     },
                     {
-                        title: "Technical Coursework and Quantitative Toolkit",
-                        meta: "Physics, Data Science, and Applied Math",
-                        tag: "Academic",
-                        description: "A strong technical foundation in statistics, mathematics, calculus, and quantitative finance coursework supports future software and analytical builds.",
-                        href: "https://github.com/dmbriner"
+                        id: "openbb-terminal-workflow",
+                        title: "OpenBB Terminal Workflow",
+                        meta: "In Progress · Market Data and Research Tooling",
+                        tag: "Terminal",
+                        description: "I installed and used OpenBB through Python as a free Bloomberg-style terminal for market research, screening, and data access. I am now using that experience as a practical foundation for building a more tailored terminal and research environment of my own.",
+                        detailPath: "/portfolio/item/?id=openbb-terminal-workflow",
+                        contentType: "note",
+                        detailBody: [
+                            "This workflow began as a practical way to access market data, screening tools, and research functionality without relying on expensive institutional software.",
+                            "Using OpenBB in Python gave me a clear view of what I value most in a terminal workflow: speed, breadth of data access, and a cleaner path from information gathering to decision-making.",
+                            "That experience now informs the product direction behind the tools I am building for myself."
+                        ],
+                        links: [
+                            { label: "View GitHub Profile", url: "https://github.com/dmbriner" }
+                        ]
                     }
                 ]
             },
@@ -153,16 +171,17 @@ window.siteData = {
                 description: "Investment-oriented analytical work including market research, capital structure analysis, and transaction framing.",
                 items: [
                     {
-                        title: "Capital Markets Analysis",
-                        meta: "Carolina Capital Advisory Group",
-                        tag: "Finance",
-                        description: "Supported financing and capital structure analysis through market research, transaction comparables, and evaluation of debt and hybrid issuance strategies."
-                    },
-                    {
-                        title: "Institutional Outreach and Speaker Programming",
-                        meta: "Carolina Capital Advisory Group",
-                        tag: "Leadership",
-                        description: "Led outreach efforts and expanded professional engagement opportunities, complementing the group's advisory and markets exposure."
+                        id: "ups-investment-thesis",
+                        title: "UPS Investment Thesis",
+                        meta: "Placeholder",
+                        tag: "Coming Soon",
+                        description: "A dedicated placeholder for an upcoming UPS investment thesis PDF and supporting valuation work that will be added to this section.",
+                        detailPath: "/portfolio/item/?id=ups-investment-thesis",
+                        contentType: "note",
+                        detailBody: [
+                            "This page is reserved for a future UPS investment thesis PDF.",
+                            "Once the write-up is finalized, the embedded document and any supporting valuation materials will be added here."
+                        ]
                     }
                 ]
             },
@@ -172,17 +191,34 @@ window.siteData = {
                 description: "Quantitative strategy work organized separately from broader portfolio and valuation items.",
                 items: [
                     {
+                        id: "pre-earnings-atm-calendar-spread-strategy",
                         title: "Pre-Earnings ATM Calendar Spread Strategy",
                         meta: "Carolina Investment Group",
                         tag: "Options",
-                        description: "Developed and executed a data-driven pre-earnings strategy using historical earnings analysis, options pricing, and disciplined trade selection."
+                        description: "Developed and executed a data-driven pre-earnings strategy using historical earnings analysis, options pricing, and disciplined trade selection.",
+                        detailPath: "/portfolio/item/?id=pre-earnings-atm-calendar-spread-strategy",
+                        contentType: "note",
+                        detailBody: [
+                            "This work focused on event-driven options positioning around earnings announcements.",
+                            "The strategy was built around historical earnings behavior, implied volatility context, and disciplined trade selection rather than discretionary entry alone.",
+                            "It remains one of the clearest examples of how I like to combine data work with practical market structure."
+                        ]
                     },
                     {
-                        title: "Quantitative Research Workflow",
-                        meta: "Data collection, filtering, and execution discipline",
-                        tag: "Process",
-                        description: "Built a repeatable process around event study analysis, volatility context, and risk-controlled trade selection.",
-                        href: "https://github.com/dmbriner"
+                        id: "mean-reversion-trading-algorithm",
+                        title: "Mean Reversion Trading Algorithm",
+                        meta: "In Progress · Independent Project",
+                        tag: "GitHub",
+                        description: "An independent mean reversion trading strategy project built in my own time. The work is currently in progress and partially abandoned, but it remains a useful record of my approach to systematic strategy design and testing.",
+                        detailPath: "/portfolio/item/?id=mean-reversion-trading-algorithm",
+                        contentType: "note",
+                        detailBody: [
+                            "This strategy project was built independently and remains a work in progress.",
+                            "Even though the project is partially abandoned, it still reflects my approach to signal formation, testing, and translating an idea into a repeatable trading framework."
+                        ],
+                        links: [
+                            { label: "View GitHub Repository", url: "https://github.com/dmbriner/Mean-Reversion-Trading-Algorithm" }
+                        ]
                     }
                 ]
             },
@@ -192,18 +228,24 @@ window.siteData = {
                 description: "Published papers and longer-form analytical work already present in the repository.",
                 items: [
                     {
+                        id: "detonation-and-decay",
                         title: "Detonation and Decay: The Physics and Persistent Hazards of Operation Redwing at Bikini and Enewetak Atolls",
                         meta: "May 2025 · Phillips Exeter Academy",
                         tag: "PDF",
-                        description: "A research paper examining Operation Redwing within the broader Cold War cycle of thermonuclear escalation, technological innovation, and environmental consequence.",
-                        href: "/assets/pdfs/Detonation_and_Decay_Operation_Redwing.pdf"
+                        description: "Authored a research paper examining Operation Redwing within the broader Cold War cycle of thermonuclear escalation, technological innovation, and environmental consequence. Inspired in part by my longstanding interest in nuclear physics — a discipline I intend to pursue at the collegiate level — the project also carried personal resonance: my grandfather, Charles Briner, coordinated monitoring systems during U.S. hydrogen bomb testing at Enewetak Atoll and received formal commendation for his work. The paper argues that although Operation Redwing refined thermonuclear yield prediction and fallout containment after the unexpectedly high outputs of Operation Castle, the physics of fission-driven fallout and neutron activation rendered long-term radiological harm unavoidable.",
+                        detailPath: "/portfolio/item/?id=detonation-and-decay",
+                        contentType: "pdf",
+                        pdfSrc: "/assets/pdfs/Detonation_and_Decay_Operation_Redwing.pdf"
                     },
                     {
+                        id: "historical-patterns-new-contexts",
                         title: "Historical Patterns, New Contexts: The Dodd-Frank Act and the Cycle of Regulation",
                         meta: "April 2024 - May 2024 · Phillips Exeter Academy",
                         tag: "PDF",
-                        description: "A paper on the Dodd-Frank Act positioned within a longer cycle of crises, regulation, and financial innovation.",
-                        href: "/assets/pdfs/Historical_Patterns_New_Contexts_Dodd_Frank_Act_and_the_Cycle_of_Regulation.pdf"
+                        description: "Authored a research paper on the Dodd-Frank Act, situated within a century-long cycle spanning financial crises, regulatory responses, and innovation. The paper’s central thesis is that Dodd-Frank, though comprehensive and well-intentioned, could not eliminate risk but merely redirected it, pushing leverage, liquidity transformation, and speculative activity into the alternative asset and shadow-banking sectors. Using the 2023 Silicon Valley Bank collapse as a case study, I argue that this outcome reflects the Act’s core limitation: regulation that does not change the underlying payoff structure—privatized gains and socialized losses—will fail to prevent future crises. By comparing Dodd-Frank to earlier efforts such as Glass–Steagall and Gramm-Leach-Bliley, the paper establishes unless managerial incentives are aligned with loss absorption, each new round of rules will re-route rather than resolve systemic vulnerability.",
+                        detailPath: "/portfolio/item/?id=historical-patterns-new-contexts",
+                        contentType: "pdf",
+                        pdfSrc: "/assets/pdfs/Historical_Patterns_New_Contexts_Dodd_Frank_Act_and_the_Cycle_of_Regulation.pdf"
                     }
                 ]
             }

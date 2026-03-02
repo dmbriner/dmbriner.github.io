@@ -13,10 +13,11 @@ window.addEventListener("DOMContentLoaded", () => {
 function renderChrome(data, page) {
     const header = document.getElementById("site-header");
     const footer = document.getElementById("site-footer");
+    const activePage = page === "portfolio-detail" || page === "ups-thesis" ? "portfolio" : page;
     const navLinks = data.nav
         .map(
             item => `
-                <a class="nav-link ${page === item.key ? "is-active" : ""}" href="${item.href}">
+                <a class="nav-link ${activePage === item.key ? "is-active" : ""}" href="${item.href}">
                     ${item.label}
                 </a>
             `
@@ -87,6 +88,11 @@ function renderPage(page, data) {
     if (page === "portfolio") {
         root.innerHTML = renderPortfolioPage(data);
         setupPortfolioTabs(data.portfolio.sections);
+        return;
+    }
+
+    if (page === "portfolio-detail" || page === "ups-thesis") {
+        root.innerHTML = renderPortfolioDetailPage(data);
         return;
     }
 
@@ -526,7 +532,7 @@ function setupPortfolioTabs(sections) {
                     ${activeSection.items
                         .map(
                             item => `
-                                <article class="portfolio-card">
+                                <a class="portfolio-card" href="${item.detailPath}">
                                     <div class="entry-top">
                                         <div>
                                             <p class="item-title">${item.title}</p>
@@ -535,8 +541,8 @@ function setupPortfolioTabs(sections) {
                                         ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
                                     </div>
                                     <p class="card-copy">${item.description}</p>
-                                    ${item.href ? `<a class="portfolio-link" href="${item.href}" ${item.href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""}>Open item</a>` : ""}
-                                </article>
+                                    <span class="portfolio-link">Open item</span>
+                                </a>
                             `
                         )
                         .join("")}
@@ -549,6 +555,108 @@ function setupPortfolioTabs(sections) {
         button.addEventListener("click", () => render(button.dataset.portfolioTab));
     });
     render(sections[0].key);
+}
+
+function renderPortfolioDetailPage(data) {
+    const item = findPortfolioItem(data, new URLSearchParams(window.location.search).get("id"));
+    if (!item) {
+        return `
+            <div class="page">
+                <section class="section">
+                    <div class="section-head">
+                        <div>
+                            <span class="eyebrow">Portfolio</span>
+                            <h1 class="page-title">Item not found.</h1>
+                        </div>
+                    </div>
+                    <div class="button-row">
+                        <a class="ghost-button" href="/portfolio/">Back to Portfolio</a>
+                    </div>
+                </section>
+            </div>
+        `;
+    }
+
+    return `
+        <div class="page">
+            <section class="section">
+                <div class="button-row">
+                    <a class="ghost-button" href="/portfolio/">Back to Portfolio</a>
+                </div>
+                <article class="tab-panel detail-shell">
+                    <div class="entry-top">
+                        <div>
+                            <p class="item-title">${item.title}</p>
+                            <p class="item-meta">${item.meta}</p>
+                        </div>
+                        ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
+                    </div>
+                    <p class="card-copy detail-summary">${item.description}</p>
+                    ${renderDetailContent(item)}
+                </article>
+            </section>
+        </div>
+    `;
+}
+
+function renderDetailContent(item) {
+    const links = item.links && item.links.length
+        ? `
+            <div class="button-row">
+                ${item.links
+                    .map(
+                        link => `
+                            <a class="ghost-button" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+                        `
+                    )
+                    .join("")}
+            </div>
+        `
+        : "";
+
+    if (item.contentType === "pdf") {
+        return `
+            ${links}
+            <div class="detail-embed">
+                <iframe class="embedded-frame" src="${item.pdfSrc}" title="${item.title} PDF"></iframe>
+            </div>
+        `;
+    }
+
+    if (item.contentType === "external-preview") {
+        return `
+            ${links}
+            <div class="detail-embed">
+                <iframe class="embedded-frame" src="${item.embedSrc}" title="${item.embedLabel || item.title}" loading="lazy"></iframe>
+            </div>
+        `;
+    }
+
+    const body = (item.detailBody || [])
+        .map(paragraph => `<p class="timeline-copy">${paragraph}</p>`)
+        .join("");
+
+    return `
+        ${links}
+        <div class="detail-body">
+            ${body}
+        </div>
+    `;
+}
+
+function findPortfolioItem(data, id) {
+    if (!id) {
+        return null;
+    }
+
+    for (const section of data.portfolio.sections) {
+        const item = section.items.find(entry => entry.id === id);
+        if (item) {
+            return item;
+        }
+    }
+
+    return null;
 }
 
 function setupForms() {
