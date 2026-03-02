@@ -27,8 +27,10 @@ function renderChrome(data, page) {
     header.innerHTML = `
         <div class="site-header">
             <nav class="site-nav" aria-label="Primary">
-                <a class="brand" href="/">
-                    <img class="brand-mark" src="${data.site.logo}" alt="${data.site.name} logo" />
+                <a class="brand" href="/" aria-label="${data.site.name} home">
+                    <span class="brand-badge" aria-hidden="true">
+                        <img class="brand-mark" src="${data.site.logo}" alt="" />
+                    </span>
                     <span class="brand-copy">
                         <span class="brand-name">${data.site.name}</span>
                         <span class="brand-tag">${data.site.tagline}</span>
@@ -115,6 +117,24 @@ function renderPage(page, data) {
 }
 
 function renderAboutPage(data) {
+    const highlightCards = data.about.highlights
+        .map(highlight => {
+            const item = findPortfolioItem(data, highlight.id);
+            if (!item) {
+                return "";
+            }
+
+            return `
+                <a class="feature-card" href="${item.detailPath}">
+                    <span class="feature-kicker">${highlight.kicker}</span>
+                    <h3 class="feature-title">${item.title}</h3>
+                    <p class="card-copy">${highlight.note}</p>
+                    <span class="portfolio-link">Open project</span>
+                </a>
+            `;
+        })
+        .join("");
+
     return `
         <div class="page">
             <section class="hero">
@@ -141,20 +161,11 @@ function renderAboutPage(data) {
                 <div class="section-head">
                     <div>
                         <span class="eyebrow">Highlights</span>
-                        <h2 class="section-title">Work spanning finance, research, and quantitative analysis.</h2>
+                        <h2 class="section-title">Specific work, not just broad categories.</h2>
                     </div>
                 </div>
-                <div class="card-grid">
-                    ${data.about.metrics
-                        .map(
-                            metric => `
-                                <article class="metric">
-                                    <p class="metric-value">${metric.value}</p>
-                                    <p class="metric-label">${metric.label}</p>
-                                </article>
-                            `
-                        )
-                        .join("")}
+                <div class="feature-grid">
+                    ${highlightCards}
                 </div>
             </section>
 

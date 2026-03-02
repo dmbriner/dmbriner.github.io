@@ -21,10 +21,22 @@ window.siteData = {
     ],
     about: {
         bio: "First-year student at UNC Chapel Hill pursuing a B.A. in Business Administration with a concentration in Finance, a B.A. in Physics on the Quantitative Finance track, and a minor in Data Science. Experienced in financial regulation through research on Glass-Steagall, Gramm-Leach-Bliley, and Dodd-Frank, evaluating how regulatory shifts recalibrate market dynamics without altering underlying profit motives or managerial incentives, redirecting rather than resolving systemic vulnerability. Work at the North Carolina Chamber of Commerce extended this foundation, as the organization sits at the intersection of regulation and market dynamics. Research involved compiling skills taxonomies and NC labor-force data, which I found particularly engaging. Alongside a strong background in physics, statistics, and mathematics, this experience pushed my interests toward more quantitative, market-facing sectors of finance.",
-        metrics: [
-            { value: "4.00", label: "Current GPA at UNC Chapel Hill" },
-            { value: "Now", label: "Building products, research, and valuation work in parallel" },
-            { value: "3", label: "Core academic areas: finance, physics, and data science" }
+        highlights: [
+            {
+                id: "tickr",
+                kicker: "Product Build",
+                note: "An in-progress market research workspace focused on cleaner workflows, stronger data presentation, and faster navigation."
+            },
+            {
+                id: "pre-earnings-atm-calendar-spread-strategy",
+                kicker: "Systematic Trading",
+                note: "A practical options strategy built around earnings behavior, implied volatility context, and disciplined trade selection."
+            },
+            {
+                id: "historical-patterns-new-contexts",
+                kicker: "Research",
+                note: "A long-form paper on Dodd-Frank, shadow banking, and why regulation often redistributes risk instead of eliminating it."
+            }
         ]
     },
     resume: {
