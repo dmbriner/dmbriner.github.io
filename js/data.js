@@ -179,14 +179,14 @@ window.siteData = {
                 items: [
                     {
                         id: "tickr",
-                        title: "Tickr",
+                        title: "Tickr by Dana Briner",
                         meta: "In Progress · Product and Market Intelligence Platform",
                         tag: "Build",
                         description: "Tickr is an in-progress product I am building to move toward a cleaner, faster, more intuitive market research experience. It is intended to function as a modern investing and trading workspace with strong data presentation, streamlined workflows, and a more self-directed alternative to the tools I use today.",
                         detailPath: "/portfolio/item/?id=tickr",
                         contentType: "external-preview",
                         embedSrc: "https://dmbriner.github.io/tickr/",
-                        embedLabel: "Tickr Preview",
+                        embedLabel: "Tickr by Dana Briner Preview",
                         links: [
                             { label: "Open Live Preview", url: "https://dmbriner.github.io/tickr/" },
                             { label: "View GitHub Repository", url: "https://github.com/dmbriner/tickr" }

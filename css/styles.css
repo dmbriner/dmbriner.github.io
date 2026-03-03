@@ -262,7 +262,10 @@ textarea {
     cursor: pointer;
 }
 
-.button {
+.button,
+.button:visited,
+.button:hover,
+.button:focus-visible {
     color: #ffffff;
     background: var(--ink);
     box-shadow: var(--shadow-soft);
@@ -274,7 +277,10 @@ textarea {
     transform: translateY(-1px);
 }
 
-.ghost-button {
+.ghost-button,
+.ghost-button:visited,
+.ghost-button:hover,
+.ghost-button:focus-visible {
     background: var(--surface-strong);
     border-color: var(--line-strong);
     box-shadow: var(--shadow-soft);
