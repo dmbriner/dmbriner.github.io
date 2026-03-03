@@ -214,12 +214,12 @@ function renderAboutPage(data) {
             <section class="section">
                 <div class="split-grid">
                     <article class="list-card">
-                        <h3>Recent Experience</h3>
+                        <h3>Recent experience</h3>
                         <div class="timeline-stack">${recentExperienceCards}</div>
                     </article>
 
                     <article class="list-card">
-                        <h3>Academic Focus</h3>
+                        <h3>Academic focus</h3>
                         <div class="timeline-stack">${academicFocusCards}</div>
                     </article>
                 </div>
