@@ -28,9 +28,7 @@ function renderChrome(data, page) {
         <div class="site-header">
             <nav class="site-nav" aria-label="Primary">
                 <a class="brand" href="/" aria-label="${data.site.name} home">
-                    <span class="brand-badge" aria-hidden="true">
-                        <img class="brand-mark" src="${data.site.logo}" alt="" />
-                    </span>
+                    <img class="brand-mark" src="${data.site.logo}" alt="" />
                     <span class="brand-copy">
                         <span class="brand-name">${data.site.name}</span>
                         <span class="brand-tag">${data.site.tagline}</span>
@@ -107,6 +105,7 @@ function renderPage(page, data) {
     if (page === "resume") {
         root.innerHTML = renderResumePage(data);
         setupResumeDownload();
+        openHashDisclosure();
         return;
     }
 
@@ -118,21 +117,55 @@ function renderPage(page, data) {
 
 function renderAboutPage(data) {
     const highlightCards = data.about.highlights
-        .map(highlight => {
-            const item = findPortfolioItem(data, highlight.id);
-            if (!item) {
-                return "";
-            }
-
-            return `
-                <a class="feature-card" href="${item.detailPath}">
-                    <span class="feature-kicker">${highlight.kicker}</span>
-                    <h3 class="feature-title">${item.title}</h3>
-                    <p class="card-copy">${highlight.note}</p>
-                    <span class="portfolio-link">Open project</span>
+        .map(
+            item => `
+                <a class="metric metric-link" href="${item.href}">
+                    <p class="metric-value">${item.value}</p>
+                    <p class="metric-label">${item.label}</p>
                 </a>
-            `;
-        })
+            `
+        )
+        .join("");
+
+    const recentExperienceCards = data.resume.experience
+        .slice(0, 3)
+        .map(
+            item => `
+                <a class="timeline-link-card" href="/resume/#${buildExperienceAnchorId(item.company)}">
+                    <div class="timeline-top">
+                        <div>
+                            <p class="item-title">${item.role}</p>
+                            <p class="item-subtitle logo-line">
+                                <img class="inline-logo" src="${item.logo}" alt="${item.company} logo" />
+                                ${item.company}
+                            </p>
+                        </div>
+                        <span class="item-date">${item.dates}</span>
+                    </div>
+                    <p class="timeline-copy">${item.description}</p>
+                </a>
+            `
+        )
+        .join("");
+
+    const academicFocusCards = data.resume.education
+        .map(
+            item => `
+                <a class="timeline-link-card" href="/resume/#${buildEducationAnchorId(item.school)}">
+                    <div class="timeline-top">
+                        <div>
+                            <p class="item-title logo-line">
+                                ${item.logo ? `<img class="inline-logo" src="${item.logo}" alt="${item.school} logo" />` : ""}
+                                ${item.school}
+                            </p>
+                            <p class="item-subtitle">${item.degree}</p>
+                        </div>
+                        <span class="item-date">${item.dates}</span>
+                    </div>
+                    <p class="timeline-copy">${item.summary}</p>
+                </a>
+            `
+        )
         .join("");
 
     return `
@@ -146,8 +179,8 @@ function renderAboutPage(data) {
                     <h1 class="hero-title">${data.site.name}</h1>
                     <p class="hero-copy">${data.about.bio}</p>
                     <div class="hero-actions">
-                        <a class="button" href="/portfolio/">View portfolio</a>
-                        <a class="ghost-button" href="/resume/">Open resume</a>
+                        <a class="button" href="/portfolio/">View Portfolio</a>
+                        <a class="ghost-button" href="/resume/">Open Resume</a>
                     </div>
                     <div class="social-row">
                         <a class="ghost-button" href="${data.site.linkedin}" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -161,10 +194,10 @@ function renderAboutPage(data) {
                 <div class="section-head">
                     <div>
                         <span class="eyebrow">Highlights</span>
-                        <h2 class="section-title">Specific work, not just broad categories.</h2>
+                        <h2 class="section-title">Highlights and Current Work.</h2>
                     </div>
                 </div>
-                <div class="feature-grid">
+                <div class="card-grid">
                     ${highlightCards}
                 </div>
             </section>
@@ -172,51 +205,13 @@ function renderAboutPage(data) {
             <section class="section">
                 <div class="split-grid">
                     <article class="list-card">
-                        <h3>Recent experience</h3>
-                        <div class="timeline-stack">
-                            ${data.resume.experience
-                                .slice(0, 3)
-                                .map(
-                                    item => `
-                                        <div class="timeline-item">
-                                            <div class="timeline-top">
-                                                <div>
-                                                    <p class="item-title">${item.role}</p>
-                                                    <p class="item-subtitle logo-line">
-                                                        <img class="inline-logo" src="${item.logo}" alt="${item.company} logo" />
-                                                        ${item.company}
-                                                    </p>
-                                                </div>
-                                                <span class="item-date">${item.dates}</span>
-                                            </div>
-                                            <p class="timeline-copy">${item.description}</p>
-                                        </div>
-                                    `
-                                )
-                                .join("")}
-                        </div>
+                        <h3>Recent Experience</h3>
+                        <div class="timeline-stack">${recentExperienceCards}</div>
                     </article>
 
                     <article class="list-card">
-                        <h3>Academic focus</h3>
-                        <div class="timeline-stack">
-                            ${data.resume.education
-                                .map(
-                                    item => `
-                                        <div class="timeline-item">
-                                            <div class="timeline-top">
-                                                <div>
-                                                    <p class="item-title">${item.school}</p>
-                                                    <p class="item-subtitle">${item.degree}</p>
-                                                </div>
-                                                <span class="item-date">${item.dates}</span>
-                                            </div>
-                                            <p class="timeline-copy">${item.summary}</p>
-                                        </div>
-                                    `
-                                )
-                                .join("")}
-                        </div>
+                        <h3>Academic Focus</h3>
+                        <div class="timeline-stack">${academicFocusCards}</div>
                     </article>
                 </div>
             </section>
@@ -245,7 +240,7 @@ function renderPortfolioPage(data) {
                 <div class="section-head">
                     <div>
                         <span class="eyebrow">Portfolio</span>
-                        <h1 class="page-title">Selected work.</h1>
+                        <h1 class="page-title">Selected Work.</h1>
                         <p class="page-intro">The portfolio is grouped into concise tracks so the main navigation stays simple while the underlying work remains intact.</p>
                     </div>
                 </div>
@@ -285,7 +280,7 @@ function renderBlogPage(data) {
                 <div class="section-head">
                     <div>
                         <span class="eyebrow">Blog</span>
-                        <h1 class="page-title">Notes and essays.</h1>
+                        <h1 class="page-title">Notes and Essays.</h1>
                         <p class="page-intro">A simple subscription form is included for static hosting and forwards signups directly for follow-up.</p>
                     </div>
                     <a class="ghost-button" href="/rss.xml">RSS feed</a>
@@ -327,6 +322,9 @@ function renderBlogPage(data) {
 }
 
 function renderResumePage(data) {
+    const experienceGroups = groupExperienceByCompany(data.resume.experience);
+    const researchSection = data.portfolio.sections.find(section => section.key === "research");
+
     return `
         <div class="page">
             <section class="section">
@@ -359,22 +357,44 @@ function renderResumePage(data) {
                             <article class="resume-card">
                                 <h3>Experience</h3>
                                 <div class="timeline-stack">
-                                    ${data.resume.experience
+                                    ${experienceGroups
                                         .map(
-                                            item => `
-                                                <div class="timeline-item">
-                                                    <div class="timeline-top">
-                                                        <div>
-                                                            <p class="item-title">${item.role}</p>
-                                                            <p class="item-subtitle logo-line">
-                                                                <img class="inline-logo" src="${item.logo}" alt="${item.company} logo" />
-                                                                ${item.company}
-                                                            </p>
+                                            group => `
+                                                <details class="experience-group-card disclosure-card" id="${group.anchorId}">
+                                                    <summary class="experience-group-top disclosure-summary">
+                                                        <div class="logo-line">
+                                                            <img class="company-logo" src="${group.logo}" alt="${group.company} logo" />
+                                                            <div>
+                                                                <p class="item-title">${group.company}</p>
+                                                                <p class="item-subtitle">${group.summary}</p>
+                                                            </div>
                                                         </div>
-                                                        <span class="item-date">${item.dates}</span>
+                                                        <span class="tag">${group.callToAction}</span>
+                                                    </summary>
+                                                    <div class="experience-role-stack">
+                                                        ${group.roles
+                                                            .map(
+                                                                role => `
+                                                                    <div class="experience-role">
+                                                                        <div class="timeline-top">
+                                                                            <div>
+                                                                                <p class="item-title experience-role-title">${role.role}</p>
+                                                                                <p class="item-subtitle">${role.dates}</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p class="timeline-copy">${role.description}</p>
+                                                                        <ul class="detail-list">
+                                                                            ${(role.details || []).map(detail => `<li>${detail}</li>`).join("")}
+                                                                        </ul>
+                                                                    </div>
+                                                                `
+                                                            )
+                                                            .join("")}
                                                     </div>
-                                                    <p class="timeline-copy">${item.description}</p>
-                                                </div>
+                                                    <div class="association-row">
+                                                        <a class="association-link" href="${group.href}">${group.callToAction}</a>
+                                                    </div>
+                                                </details>
                                             `
                                         )
                                         .join("")}
@@ -385,21 +405,39 @@ function renderResumePage(data) {
                                 <h3>Education</h3>
                                 <div class="timeline-stack">
                                     ${data.resume.education
-                                        .map(
-                                            item => `
-                                                <div class="timeline-item">
-                                                    <div class="timeline-top">
+                                                .map(item => {
+                                            const relatedResearchLinks = (item.portfolioIds || [])
+                                                .map(id => findPortfolioItem(data, id))
+                                                .filter(Boolean)
+                                                .map(
+                                                    linkedItem => `
+                                                        <a class="association-link" href="${buildPortfolioDetailHref(linkedItem.detailPath, "research")}">
+                                                            ${linkedItem.title}
+                                                        </a>
+                                                    `
+                                                )
+                                                .join("");
+
+                                            return `
+                                                <details class="timeline-item disclosure-card education-card" id="${buildEducationAnchorId(item.school)}">
+                                                    <summary class="timeline-top disclosure-summary">
                                                         <div>
-                                                            <p class="item-title">${item.school}</p>
+                                                            <p class="item-title logo-line">
+                                                                ${item.logo ? `<img class="inline-logo" src="${item.logo}" alt="${item.school} logo" />` : ""}
+                                                                ${item.school}
+                                                            </p>
                                                             <p class="item-subtitle">${item.degree}</p>
                                                         </div>
                                                         <span class="item-date">${item.dates}</span>
-                                                    </div>
+                                                    </summary>
                                                     <p class="timeline-copy">${item.summary}</p>
-                                                    ${item.details.map(detail => `<p class="timeline-copy">${detail}</p>`).join("")}
-                                                </div>
+                                                    <ul class="detail-list">
+                                                        ${item.details.map(detail => `<li>${detail}</li>`).join("")}
+                                                    </ul>
+                                                    ${relatedResearchLinks ? `<div class="association-row">${relatedResearchLinks}</div>` : ""}
+                                                </details>
                                             `
-                                        )
+                                        })
                                         .join("")}
                                 </div>
                             </article>
@@ -416,15 +454,14 @@ function renderResumePage(data) {
                             <article class="resume-card">
                                 <h3>Research</h3>
                                 <div class="timeline-stack">
-                                    ${data.portfolio.sections
-                                        .find(section => section.key === "research")
+                                    ${researchSection
                                         .items.map(
                                             item => `
-                                                <div class="timeline-item">
+                                                <a class="timeline-link-card" href="${buildPortfolioDetailHref(item.detailPath, researchSection.key)}">
                                                     <p class="item-title">${item.title}</p>
                                                     <p class="item-meta">${item.meta}</p>
                                                     <p class="timeline-copy">${item.description}</p>
-                                                </div>
+                                                </a>
                                             `
                                         )
                                         .join("")}
@@ -432,7 +469,7 @@ function renderResumePage(data) {
                             </article>
 
                             <article class="resume-card">
-                                <h3>Awards and certifications</h3>
+                                <h3>Awards and Certifications</h3>
                                 <div class="timeline-stack">
                                     ${data.resume.certifications
                                         .map(item => `<div class="timeline-item"><p class="timeline-copy">${item}</p></div>`)
@@ -526,8 +563,15 @@ function setupPortfolioTabs(sections) {
         return;
     }
 
+    const updatePortfolioUrl = key => {
+        const url = new URL(window.location.href);
+        url.searchParams.set("tab", key);
+        window.history.replaceState({}, "", `${url.pathname}${url.search}`);
+    };
+
     const render = key => {
         const activeSection = sections.find(section => section.key === key) || sections[0];
+        updatePortfolioUrl(activeSection.key);
         buttons.forEach(button => {
             button.classList.toggle("is-active", button.dataset.portfolioTab === activeSection.key);
         });
@@ -543,7 +587,7 @@ function setupPortfolioTabs(sections) {
                     ${activeSection.items
                         .map(
                             item => `
-                                <a class="portfolio-card" href="${item.detailPath}">
+                                <a class="portfolio-card" href="${buildPortfolioDetailHref(item.detailPath, activeSection.key)}">
                                     <div class="entry-top">
                                         <div>
                                             <p class="item-title">${item.title}</p>
@@ -565,11 +609,16 @@ function setupPortfolioTabs(sections) {
     buttons.forEach(button => {
         button.addEventListener("click", () => render(button.dataset.portfolioTab));
     });
-    render(sections[0].key);
+
+    const initialTab = new URLSearchParams(window.location.search).get("tab");
+    render(initialTab || sections[0].key);
 }
 
 function renderPortfolioDetailPage(data) {
-    const item = findPortfolioItem(data, new URLSearchParams(window.location.search).get("id"));
+    const params = new URLSearchParams(window.location.search);
+    const item = findPortfolioItem(data, params.get("id"));
+    const activeSection = findPortfolioSection(data, params.get("tab")) || findPortfolioSectionForItem(data, params.get("id"));
+    const backHref = activeSection ? `/portfolio/?tab=${activeSection.key}` : "/portfolio/";
     if (!item) {
         return `
             <div class="page">
@@ -581,7 +630,7 @@ function renderPortfolioDetailPage(data) {
                         </div>
                     </div>
                     <div class="button-row">
-                        <a class="ghost-button" href="/portfolio/">Back to Portfolio</a>
+                        <a class="ghost-button" href="${backHref}">Back to Portfolio</a>
                     </div>
                 </section>
             </div>
@@ -592,7 +641,7 @@ function renderPortfolioDetailPage(data) {
         <div class="page">
             <section class="section">
                 <div class="button-row">
-                    <a class="ghost-button" href="/portfolio/">Back to Portfolio</a>
+                    <a class="ghost-button" href="${backHref}">Back to Portfolio</a>
                 </div>
                 <article class="tab-panel detail-shell">
                     <div class="entry-top">
@@ -668,6 +717,100 @@ function findPortfolioItem(data, id) {
     }
 
     return null;
+}
+
+function findPortfolioSection(data, key) {
+    if (!key) {
+        return null;
+    }
+
+    return data.portfolio.sections.find(section => section.key === key) || null;
+}
+
+function findPortfolioSectionForItem(data, id) {
+    if (!id) {
+        return null;
+    }
+
+    return data.portfolio.sections.find(section => section.items.some(item => item.id === id)) || null;
+}
+
+function buildPortfolioDetailHref(detailPath, tabKey) {
+    const url = new URL(detailPath, window.location.origin);
+    url.searchParams.set("tab", tabKey);
+    return `${url.pathname}${url.search}`;
+}
+
+function buildExperienceAnchorId(company) {
+    return `experience-${slugify(company)}`;
+}
+
+function buildEducationAnchorId(school) {
+    return `education-${slugify(school)}`;
+}
+
+function groupExperienceByCompany(items) {
+    const groups = [];
+
+    items.forEach(item => {
+        const existing = groups.find(group => group.company === item.company);
+        if (existing) {
+            existing.roles.push(item);
+            if (!existing.portfolioId && item.portfolioId) {
+                existing.portfolioId = item.portfolioId;
+            }
+            if (!existing.portfolioTab && item.portfolioTab) {
+                existing.portfolioTab = item.portfolioTab;
+            }
+            return;
+        }
+
+        groups.push({
+            company: item.company,
+            logo: item.logo,
+            roles: [item],
+            portfolioId: item.portfolioId || null,
+            portfolioTab: item.portfolioTab || null
+        });
+    });
+
+    return groups.map(group => {
+        const href = group.portfolioId
+            ? buildPortfolioDetailHref(`/portfolio/item/?id=${group.portfolioId}`, group.portfolioTab || "")
+            : group.portfolioTab
+                ? `/portfolio/?tab=${group.portfolioTab}`
+                : "/portfolio/";
+
+        return {
+            ...group,
+            anchorId: buildExperienceAnchorId(group.company),
+            href,
+            summary: group.roles.length > 1 ? `${group.roles.length} roles` : group.roles[0].role,
+            callToAction: group.portfolioId ? "View Related Work" : "Open Portfolio Track"
+        };
+    });
+}
+
+function slugify(value) {
+    return value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+}
+
+function openHashDisclosure() {
+    const hash = window.location.hash;
+    if (!hash) {
+        return;
+    }
+
+    const target = document.querySelector(hash);
+    if (!(target instanceof HTMLDetailsElement)) {
+        return;
+    }
+
+    target.open = true;
+    target.scrollIntoView({ block: "start", behavior: "smooth" });
 }
 
 function setupForms() {

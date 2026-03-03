@@ -5,7 +5,7 @@ window.siteData = {
         email: "dbriner@unc.edu",
         phone: "(984) 484-1862",
         location: "Chapel Hill, NC",
-        logo: "/assets/img/db-mark.svg",
+        logo: "/assets/img/weblogo.png",
         profileImage: "/assets/img/profile.jpg",
         linkedin: "https://www.linkedin.com/in/dana-briner-5461b6202",
         linkedinLabel: "dana-briner-5461b6202",
@@ -23,19 +23,19 @@ window.siteData = {
         bio: "First-year student at UNC Chapel Hill pursuing a B.A. in Business Administration with a concentration in Finance, a B.A. in Physics on the Quantitative Finance track, and a minor in Data Science. Experienced in financial regulation through research on Glass-Steagall, Gramm-Leach-Bliley, and Dodd-Frank, evaluating how regulatory shifts recalibrate market dynamics without altering underlying profit motives or managerial incentives, redirecting rather than resolving systemic vulnerability. Work at the North Carolina Chamber of Commerce extended this foundation, as the organization sits at the intersection of regulation and market dynamics. Research involved compiling skills taxonomies and NC labor-force data, which I found particularly engaging. Alongside a strong background in physics, statistics, and mathematics, this experience pushed my interests toward more quantitative, market-facing sectors of finance.",
         highlights: [
             {
-                id: "tickr",
-                kicker: "Product Build",
-                note: "An in-progress market research workspace focused on cleaner workflows, stronger data presentation, and faster navigation."
+                value: "Building",
+                label: "Tickr and a cleaner market research workflow.",
+                href: "/portfolio/item/?id=tickr&tab=engineering"
             },
             {
-                id: "pre-earnings-atm-calendar-spread-strategy",
-                kicker: "Systematic Trading",
-                note: "A practical options strategy built around earnings behavior, implied volatility context, and disciplined trade selection."
+                value: "Research",
+                label: "Academic work on Dodd-Frank and Operation Redwing.",
+                href: "/portfolio/?tab=research"
             },
             {
-                id: "historical-patterns-new-contexts",
-                kicker: "Research",
-                note: "A long-form paper on Dodd-Frank, shadow banking, and why regulation often redistributes risk instead of eliminating it."
+                value: "Current Focus",
+                label: "Finance, physics, and data science at UNC Chapel Hill.",
+                href: "/resume/"
             }
         ]
     },
@@ -46,68 +46,118 @@ window.siteData = {
                 company: "Variant",
                 logo: "/assets/img/logos/variant.png",
                 dates: "February 2026 - Present",
-                description: "Execute software testing across core platform workflows at a fintech and hedge fund analytics startup, helping identify bugs and improve product reliability."
+                description: "Execute software testing across core platform workflows at a fintech and hedge fund analytics startup, helping identify bugs and improve product reliability.",
+                details: [
+                    "Test core product flows across the platform to catch bugs before release.",
+                    "Document issues clearly and help tighten reliability across day-to-day workflows."
+                ],
+                portfolioTab: "engineering"
             },
             {
                 role: "Tutor",
                 company: "The University of North Carolina at Chapel Hill",
                 logo: "/assets/img/logos/unc-chapel-hill.png",
                 dates: "January 2026 - Present",
-                description: "Provide peer tutoring in economics and calculus, reinforcing core concepts and problem-solving approaches for undergraduate students."
+                description: "Provide peer tutoring in economics and calculus, reinforcing core concepts and problem-solving approaches for undergraduate students.",
+                details: [
+                    "Work one-on-one with students on quantitative problem solving in economics and calculus.",
+                    "Break down course material into clearer conceptual steps and repeatable methods."
+                ],
+                portfolioTab: "research"
             },
             {
                 role: "Vice President of Outreach",
                 company: "Carolina Capital Advisory Group",
                 logo: "/assets/img/logos/carolina-capital-advisory-group.png",
                 dates: "December 2025 - Present",
-                description: "Lead institutional outreach and speaker programming, strengthening external relationships and expanding professional engagement opportunities for members."
+                description: "Lead institutional outreach and speaker programming, strengthening external relationships and expanding professional engagement opportunities for members.",
+                details: [
+                    "Coordinate outreach and speaker relationships to broaden the group's external network.",
+                    "Help shape programming that connects members with finance professionals and firms."
+                ],
+                portfolioTab: "valuation"
             },
             {
                 role: "Director of Academics",
                 company: "Alpha Phi International Fraternity",
                 logo: "/assets/img/logos/alpha-phi-international-fraternity.png",
                 dates: "November 2025 - Present",
-                description: "Oversee chapter academic standards, accountability measures, and programming designed to improve academic performance across the membership."
+                description: "Oversee chapter academic standards, accountability measures, and programming designed to improve academic performance across the membership.",
+                details: [
+                    "Manage academic expectations and accountability across the chapter.",
+                    "Support programming aimed at improving member performance and study habits."
+                ],
+                portfolioTab: "research"
             },
             {
                 role: "Analyst",
                 company: "Carolina Capital Advisory Group",
                 logo: "/assets/img/logos/carolina-capital-advisory-group.png",
                 dates: "September 2025 - Present",
-                description: "Support the Capital Markets team with financing and capital structure analysis through market research, transaction comparables, and evaluation of debt and hybrid issuance strategies."
+                description: "Support the Capital Markets team with financing and capital structure analysis through market research, transaction comparables, and evaluation of debt and hybrid issuance strategies.",
+                details: [
+                    "Contribute market research and transaction comparables for capital markets work.",
+                    "Analyze debt and hybrid issuance alternatives in a capital structure context."
+                ],
+                portfolioTab: "valuation",
+                portfolioId: "ups-investment-thesis"
             },
             {
                 role: "Quantitative Analyst",
                 company: "Carolina Investment Group",
                 logo: "/assets/img/logos/carolina-investment-group.png",
                 dates: "September 2025 - Present",
-                description: "Develop and execute a data-driven pre-earnings ATM calendar spread strategy using historical earnings analysis, options pricing, and disciplined trade selection."
+                description: "Develop and execute a data-driven pre-earnings ATM calendar spread strategy using historical earnings analysis, options pricing, and disciplined trade selection.",
+                details: [
+                    "Built the strategy around earnings-event behavior, implied volatility context, and trade selection discipline.",
+                    "Used data analysis to connect market structure with a repeatable options framework."
+                ],
+                portfolioTab: "systematic-trading",
+                portfolioId: "pre-earnings-atm-calendar-spread-strategy"
             },
             {
                 role: "External Affairs Intern",
                 company: "North Carolina Chamber of Commerce",
                 logo: "/assets/img/logos/nc-chamber-of-commerce.png",
                 dates: "June 2025 - August 2025",
-                description: "Supported external affairs initiatives by contributing to stakeholder outreach, policy-related communications, and relationship management efforts."
+                description: "Supported external affairs initiatives by contributing to stakeholder outreach, policy-related communications, and relationship management efforts.",
+                details: [
+                    "Worked on outreach and communications tied to policy and stakeholder engagement.",
+                    "Spent time around labor-force and skills-taxonomy research that pushed my interests toward quantitative finance."
+                ],
+                portfolioTab: "research",
+                portfolioId: "historical-patterns-new-contexts"
             },
             {
                 role: "Tutor",
                 company: "Phillips Exeter Academy",
                 logo: "/assets/img/logos/phillips-exeter-academy.png",
                 dates: "February 2024 - April 2025",
-                description: "Provided peer tutoring in physics and mathematics, helping students strengthen conceptual understanding and analytical problem-solving."
+                description: "Provided peer tutoring in physics and mathematics, helping students strengthen conceptual understanding and analytical problem-solving.",
+                details: [
+                    "Supported students in physics and mathematics with concept review and structured problem solving.",
+                    "Focused on helping peers build durable analytical habits rather than one-off answers."
+                ],
+                portfolioTab: "research",
+                portfolioId: "detonation-and-decay"
             },
             {
                 role: "Business Development and Marketing Intern",
                 company: "Uniquities",
                 logo: "/assets/img/logos/uniquities.png",
                 dates: "July 2024 - August 2024",
-                description: "Contributed to business development and marketing initiatives through brand support, outreach efforts, and promotional planning."
+                description: "Contributed to business development and marketing initiatives through brand support, outreach efforts, and promotional planning.",
+                details: [
+                    "Assisted with outreach, branding support, and marketing planning.",
+                    "Worked across business development tasks tied to growth and visibility."
+                ],
+                portfolioTab: "engineering"
             }
         ],
         education: [
             {
                 school: "The University of North Carolina at Chapel Hill",
+                logo: "/assets/img/logos/unc-chapel-hill.png",
                 degree: "Bachelor of Arts Candidate",
                 dates: "August 2025 - May 2029",
                 summary: "Majors: Business Administration (Finance Concentration), Physics (Quantitative Finance Track). Minor: Data Science.",
@@ -119,16 +169,18 @@ window.siteData = {
             },
             {
                 school: "Phillips Exeter Academy",
+                logo: "/assets/img/logos/phillips-exeter-academy.png",
                 degree: "High School Diploma",
                 dates: "September 2021 - June 2025",
                 summary: "Activities and Societies: Exeter Dance Company, STEM Peer Tutor, Bancroft Hall.",
+                portfolioIds: ["detonation-and-decay", "historical-patterns-new-contexts"],
                 details: [
                     "Coursework: Modern Physics (General and Special Relativity, Quantum Mechanics); Applied Physics; and Capitalism and Its Critics (researched the progression of economic thought, engaging with the works of Malthus, Keynes, Friedman, Rawls, Hayek, Marx, Smith, and Locke)."
                 ]
             }
         ],
         skills: ["Statistics", "Mathematics", "Calculus", "Multivariate Calculus", "Microsoft Excel"],
-        interests: "I am drawn to financial history and the intellectual evolution of economic policy. I have especially enjoyed works such as The Man Who Knew: The Life and Times of Alan Greenspan by Sebastian Mallaby and Jennifer Burns' biography of Milton Friedman.",
+        interests: "I am drawn to financial history and the intellectual evolution of economic policy. I have especially enjoyed works such as <em>The Man Who Knew: The Life and Times of Alan Greenspan</em> by Sebastian Mallaby and <em>Milton Friedman: The Last Conservative</em> by Jennifer Burns.",
         certifications: ["Youth Mental Health First Aid, Blue Cross NC (Issued Jul 2025)"],
         awards: [
             "Dean's List, Fall 2025, The University of North Carolina at Chapel Hill",
@@ -237,7 +289,7 @@ window.siteData = {
             {
                 key: "research",
                 label: "Research",
-                description: "Published papers and longer-form analytical work already present in the repository.",
+                description: "Academic papers and longer-form analytical work already present in the repository.",
                 items: [
                     {
                         id: "detonation-and-decay",

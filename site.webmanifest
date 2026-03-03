@@ -7,7 +7,7 @@
     "theme_color": "#ffffff",
     "icons": [
         {
-            "src": "/assets/img/db-mark.svg?v=20260302",
+            "src": "/assets/img/weblogo.png?v=20260302",
             "sizes": "any",
             "type": "image/svg+xml"
         }
