@@ -13,7 +13,11 @@ window.addEventListener("DOMContentLoaded", () => {
 function renderChrome(data, page) {
     const header = document.getElementById("site-header");
     const footer = document.getElementById("site-footer");
-    const activePage = page === "portfolio-detail" || page === "ups-thesis" ? "portfolio" : page;
+    const activePage = page === "portfolio-detail" || page === "ups-thesis"
+        ? "portfolio"
+        : page === "blog-detail"
+            ? "blog"
+            : page;
     const navLinks = data.nav
         .map(
             item => `
@@ -99,6 +103,11 @@ function renderPage(page, data) {
     if (page === "blog") {
         root.innerHTML = renderBlogPage(data);
         injectStatusMessage("subscribed", "Subscription received. Please confirm the email if the form service asks.");
+        return;
+    }
+
+    if (page === "blog-detail") {
+        root.innerHTML = renderBlogDetailPage(data);
         return;
     }
 
@@ -316,6 +325,55 @@ function renderBlogPage(data) {
                         <div class="post-stack">${postsMarkup}</div>
                     </article>
                 </div>
+            </section>
+        </div>
+    `;
+}
+
+function renderBlogDetailPage(data) {
+    const params = new URLSearchParams(window.location.search);
+    const post = findBlogPost(data, params.get("id"));
+    if (!post) {
+        return `
+            <div class="page">
+                <section class="section">
+                    <div class="section-head">
+                        <div>
+                            <span class="eyebrow">Blog</span>
+                            <h1 class="page-title">Post not found.</h1>
+                        </div>
+                    </div>
+                    <div class="button-row">
+                        <a class="ghost-button" href="/blog/">Back to Blog</a>
+                    </div>
+                </section>
+            </div>
+        `;
+    }
+
+    const body = (post.body || [])
+        .map(paragraph => `<p class="timeline-copy">${paragraph}</p>`)
+        .join("");
+
+    return `
+        <div class="page">
+            <section class="section">
+                <div class="button-row">
+                    <a class="ghost-button" href="/blog/">Back to Blog</a>
+                </div>
+                <article class="tab-panel detail-shell">
+                    <div class="entry-top">
+                        <div>
+                            <p class="item-title">${post.title}</p>
+                            <p class="item-meta">${post.date}</p>
+                        </div>
+                        <span class="tag">${post.category}</span>
+                    </div>
+                    <p class="card-copy detail-summary">${post.excerpt}</p>
+                    <div class="detail-body">
+                        ${body}
+                    </div>
+                </article>
             </section>
         </div>
     `;
@@ -768,6 +826,14 @@ function findPortfolioItem(data, id) {
     return null;
 }
 
+function findBlogPost(data, id) {
+    if (!id) {
+        return null;
+    }
+
+    return data.blog.posts.find(post => post.id === id) || null;
+}
+
 function findPortfolioSection(data, key) {
     if (!key) {
         return null;
@@ -836,20 +902,12 @@ function groupExperienceByCompany(items) {
             anchorId: buildExperienceAnchorId(group.company),
             href,
             summary: group.roles.map(role => role.role).join(" · "),
-            previewSummary: truncateText(previewSource, 180),
+            previewSummary: previewSource,
             dateSummary: `${group.roles[group.roles.length - 1].dates}${group.roles.length > 1 ? " · Multiple roles" : ""}`,
             previewRoles: group.roles.map(role => ({ role: role.role, dates: role.dates })),
             callToAction: href ? (group.portfolioId ? "View Related Work" : "Open Portfolio Track") : null
         };
     });
-}
-
-function truncateText(value, maxLength) {
-    if (!value || value.length <= maxLength) {
-        return value;
-    }
-
-    return `${value.slice(0, maxLength - 1).trimEnd()}...`;
 }
 
 function slugify(value) {
