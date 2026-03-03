@@ -452,7 +452,7 @@ textarea {
 }
 
 .experience-group-card {
-    padding: 24px;
+    padding: 22px;
 }
 
 .disclosure-card {
@@ -487,13 +487,6 @@ textarea {
     transform: translateY(-2px);
     border-color: var(--line-strong);
     box-shadow: var(--shadow);
-}
-
-.experience-group-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 20px;
 }
 
 .education-card {
@@ -611,11 +604,30 @@ textarea {
     flex: 0 0 auto;
 }
 
-.role-preview-line {
-    margin: 6px 0 0;
+.role-preview-stack {
+    display: grid;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.role-preview-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+}
+
+.role-preview-title {
     color: var(--ink);
     font-size: 0.98rem;
-    line-height: 1.5;
+}
+
+.role-preview-date {
+    color: var(--muted);
+    font-size: 0.92rem;
+    white-space: nowrap;
 }
 
 .logo-line {
@@ -962,7 +974,6 @@ textarea {
 
     .section-head,
     .resume-header,
-    .experience-group-top,
     .timeline-top,
     .entry-top,
     .post-top,

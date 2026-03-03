@@ -360,17 +360,30 @@ function renderResumePage(data) {
                                     ${experienceGroups
                                         .map(
                                             group => `
-                                                <details class="experience-group-card disclosure-card" id="${group.anchorId}">
-                                                    <summary class="experience-group-top disclosure-summary">
-                                                        <div class="logo-line">
-                                                            <img class="company-logo" src="${group.logo}" alt="${group.company} logo" />
-                                                            <div>
-                                                                <p class="item-title">${group.company}</p>
-                                                                <p class="item-subtitle">${group.dateSummary}</p>
-                                                                <p class="role-preview-line">${group.summary}</p>
-                                                            </div>
+                                                <details class="disclosure-card experience-group-card" id="${group.anchorId}">
+                                                    <summary class="timeline-top disclosure-summary">
+                                                        <div>
+                                                            <p class="item-title logo-line">
+                                                                <img class="company-logo" src="${group.logo}" alt="${group.company} logo" />
+                                                                ${group.company}
+                                                            </p>
+                                                            <p class="item-subtitle">${group.summary}</p>
+                                                            ${group.previewRoles.length ? `
+                                                                <div class="role-preview-stack">
+                                                                    ${group.previewRoles
+                                                                        .map(
+                                                                            role => `
+                                                                                <div class="role-preview-item">
+                                                                                    <span class="role-preview-title">${role.role}</span>
+                                                                                    <span class="role-preview-date">${role.dates}</span>
+                                                                                </div>
+                                                                            `
+                                                                        )
+                                                                        .join("")}
+                                                                </div>
+                                                            ` : ""}
                                                         </div>
-                                                        ${group.callToAction ? `<span class="tag">${group.callToAction}</span>` : ""}
+                                                        <span class="item-date">${group.dateSummary}</span>
                                                     </summary>
                                                     <div class="experience-role-stack">
                                                         ${group.roles
@@ -688,8 +701,8 @@ function renderResumeResearchCard(item, tabKey) {
         <article class="timeline-link-card">
             <p class="item-title">${item.title}</p>
             <p class="item-meta">${item.meta}</p>
-            <p class="timeline-copy">${item.summary || item.description}</p>
             ${renderAssociationLinks(item.associations)}
+            <p class="timeline-copy">${item.summary || item.description}</p>
             <a class="portfolio-link" href="${buildPortfolioDetailHref(item.detailPath, tabKey)}">Open item</a>
         </article>
     `;
@@ -823,6 +836,7 @@ function groupExperienceByCompany(items) {
             href,
             summary: group.roles.map(role => role.role).join(" · "),
             dateSummary: `${group.roles[group.roles.length - 1].dates}${group.roles.length > 1 ? " · Multiple roles" : ""}`,
+            previewRoles: group.roles.map(role => ({ role: role.role, dates: role.dates })),
             callToAction: href ? (group.portfolioId ? "View Related Work" : "Open Portfolio Track") : null
         };
     });
