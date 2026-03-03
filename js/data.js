@@ -86,8 +86,7 @@ window.siteData = {
                     "Contribute market research and transaction comparables for capital markets work.",
                     "Analyze debt and hybrid issuance alternatives in a capital structure context."
                 ],
-                portfolioTab: "valuation",
-                portfolioId: "ups-investment-thesis"
+                portfolioTab: "valuation"
             },
             {
                 role: "Quantitative Analyst",
@@ -230,14 +229,7 @@ window.siteData = {
                         description: "This investment thesis frames UPS as a large-scale logistics platform whose domestic package network, service-density advantages, and recent operating adjustments create a more durable earnings base than the market may be fully crediting. The write-up focuses on the domestic segment's role in U.S. letters, documents, and package delivery, the strategic importance of Ground Saver within last-mile execution, and the possibility that recent relative underperformance has obscured medium-term upside as operations normalize.",
                         detailPath: "/portfolio/item/?id=ups-investment-thesis",
                         contentType: "pdf",
-                        pdfSrc: "/assets/pdfs/upsrecommendation.pdf",
-                        associations: [
-                            {
-                                label: "UPS",
-                                href: "https://www.ups.com/us/en/Home.page",
-                                logo: "/assets/img/logos/ups.png"
-                            }
-                        ]
+                        pdfSrc: "/assets/pdfs/upsrecommendation.pdf"
                     }
                 ]
             },
