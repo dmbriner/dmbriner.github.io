@@ -210,6 +210,7 @@ window.siteData = {
                     {
                         id: "openbb-terminal-workflow",
                         title: "OpenBB Terminal Workflow",
+                        logo: "/assets/img/logos/openbb.png",
                         meta: "In Progress · Market Data and Research Tooling",
                         tag: "Terminal",
                         description: "I installed and used OpenBB through Python as a free Bloomberg-style terminal for market research, screening, and data access. I am now using that experience as a practical foundation for building a more tailored terminal and research environment of my own.",

@@ -592,10 +592,23 @@ textarea {
     letter-spacing: -0.03em;
 }
 
+.title-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .item-subtitle,
 .item-date,
 .item-meta {
     color: var(--muted);
+}
+
+.project-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex: 0 0 auto;
 }
 
 .role-preview-line {

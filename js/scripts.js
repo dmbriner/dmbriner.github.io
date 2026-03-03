@@ -625,7 +625,10 @@ function renderPortfolioDetailPage(data) {
                 <article class="tab-panel detail-shell">
                     <div class="entry-top">
                         <div>
-                            <p class="item-title">${item.title}</p>
+                            <p class="item-title title-with-icon">
+                                ${item.logo ? `<img class="project-icon" src="${item.logo}" alt="" />` : ""}
+                                ${item.title}
+                            </p>
                             <p class="item-meta">${item.meta}</p>
                         </div>
                         ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
@@ -665,7 +668,10 @@ function renderPortfolioCard(item, tabKey) {
         <article class="portfolio-card">
             <div class="entry-top">
                 <div>
-                    <p class="item-title">${item.title}</p>
+                    <p class="item-title title-with-icon">
+                        ${item.logo ? `<img class="project-icon" src="${item.logo}" alt="" />` : ""}
+                        ${item.title}
+                    </p>
                     <p class="item-meta">${item.meta}</p>
                 </div>
                 ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
