@@ -194,7 +194,7 @@ function renderAboutPage(data) {
                 <div class="section-head">
                     <div>
                         <span class="eyebrow">Highlights</span>
-                        <h2 class="section-title">Highlights and current work.</h2>
+                        <h2 class="section-title">Highlights.</h2>
                     </div>
                 </div>
                 <div class="card-grid">
@@ -240,7 +240,7 @@ function renderPortfolioPage(data) {
                 <div class="section-head">
                     <div>
                         <span class="eyebrow">Portfolio</span>
-                        <h1 class="page-title">Selected Work.</h1>
+                        <h1 class="page-title">Selected work.</h1>
                         <p class="page-intro">The portfolio is grouped into concise tracks so the main navigation stays simple while the underlying work remains intact.</p>
                     </div>
                 </div>
@@ -280,7 +280,7 @@ function renderBlogPage(data) {
                 <div class="section-head">
                     <div>
                         <span class="eyebrow">Blog</span>
-                        <h1 class="page-title">Notes and Essays.</h1>
+                        <h1 class="page-title">Notes and essays.</h1>
                         <p class="page-intro">A simple subscription form is included for static hosting and forwards signups directly for follow-up.</p>
                     </div>
                     <a class="ghost-button" href="/rss.xml">RSS feed</a>
@@ -366,10 +366,11 @@ function renderResumePage(data) {
                                                             <img class="company-logo" src="${group.logo}" alt="${group.company} logo" />
                                                             <div>
                                                                 <p class="item-title">${group.company}</p>
-                                                                <p class="item-subtitle">${group.summary}</p>
+                                                                <p class="item-subtitle">${group.dateSummary}</p>
+                                                                <p class="role-preview-line">${group.summary}</p>
                                                             </div>
                                                         </div>
-                                                        <span class="tag">${group.callToAction}</span>
+                                                        ${group.callToAction ? `<span class="tag">${group.callToAction}</span>` : ""}
                                                     </summary>
                                                     <div class="experience-role-stack">
                                                         ${group.roles
@@ -402,9 +403,7 @@ function renderResumePage(data) {
                                         .join("")}
                                 </div>
                             </article>
-                        </div>
 
-                        <div class="list-stack">
                             <article class="resume-card">
                                 <h3>Education</h3>
                                 <div class="timeline-stack">
@@ -447,27 +446,18 @@ function renderResumePage(data) {
                             </article>
 
                             <article class="resume-card">
+                                <h3>Research</h3>
+                                <div class="timeline-stack">
+                                    ${researchSection.items.map(item => renderResumeResearchCard(item, researchSection.key)).join("")}
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="list-stack">
+                            <article class="resume-card">
                                 <h3>Skills</h3>
                                 <div class="tag-row">
                                     ${data.resume.skills.map(skill => `<span class="tag">${skill}</span>`).join("")}
-                                </div>
-                            </article>
-
-                            <article class="resume-card">
-                                <h3>Research</h3>
-                                <div class="timeline-stack">
-                                    ${researchSection
-                                        .items.map(
-                                            item => `
-                                                <a class="timeline-link-card" href="${buildPortfolioDetailHref(item.detailPath, researchSection.key)}">
-                                                    <p class="item-title">${item.title}</p>
-                                                    <p class="item-meta">${item.meta}</p>
-                                                    <p class="timeline-copy">${item.summary || item.description}</p>
-                                                    ${renderAssociationLinks(item.associations)}
-                                                </a>
-                                            `
-                                        )
-                                        .join("")}
                                 </div>
                             </article>
 
@@ -588,22 +578,7 @@ function setupPortfolioTabs(sections) {
                 </div>
                 <div class="portfolio-grid">
                     ${activeSection.items
-                        .map(
-                            item => `
-                                <a class="portfolio-card" href="${buildPortfolioDetailHref(item.detailPath, activeSection.key)}">
-                                    <div class="entry-top">
-                                        <div>
-                                            <p class="item-title">${item.title}</p>
-                                            <p class="item-meta">${item.meta}</p>
-                                        </div>
-                                        ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
-                                    </div>
-                                    <p class="card-copy">${item.description}</p>
-                                    ${renderAssociationLinks(item.associations)}
-                                    <span class="portfolio-link">Open item</span>
-                                </a>
-                            `
-                        )
+                        .map(item => renderPortfolioCard(item, activeSection.key))
                         .join("")}
                 </div>
             </section>
@@ -672,9 +647,45 @@ function renderAssociationLinks(associations) {
     return `
         <div class="association-row">
             ${associations
-                .map(link => `<a class="association-link" href="${link.href}">${link.label}</a>`)
+                .map(
+                    link => `
+                        <a class="association-link" href="${link.href}">
+                            ${link.logo ? `<img class="association-logo" src="${link.logo}" alt="" />` : ""}
+                            ${link.label}
+                        </a>
+                    `
+                )
                 .join("")}
         </div>
+    `;
+}
+
+function renderPortfolioCard(item, tabKey) {
+    return `
+        <article class="portfolio-card">
+            <div class="entry-top">
+                <div>
+                    <p class="item-title">${item.title}</p>
+                    <p class="item-meta">${item.meta}</p>
+                </div>
+                ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
+            </div>
+            <p class="card-copy">${item.description}</p>
+            ${renderAssociationLinks(item.associations)}
+            <a class="portfolio-link" href="${buildPortfolioDetailHref(item.detailPath, tabKey)}">Open item</a>
+        </article>
+    `;
+}
+
+function renderResumeResearchCard(item, tabKey) {
+    return `
+        <article class="timeline-link-card">
+            <p class="item-title">${item.title}</p>
+            <p class="item-meta">${item.meta}</p>
+            <p class="timeline-copy">${item.summary || item.description}</p>
+            ${renderAssociationLinks(item.associations)}
+            <a class="portfolio-link" href="${buildPortfolioDetailHref(item.detailPath, tabKey)}">Open item</a>
+        </article>
     `;
 }
 
@@ -804,7 +815,8 @@ function groupExperienceByCompany(items) {
             ...group,
             anchorId: buildExperienceAnchorId(group.company),
             href,
-            summary: group.roles.length > 1 ? `${group.roles.length} roles` : group.roles[0].role,
+            summary: group.roles.map(role => role.role).join(" · "),
+            dateSummary: `${group.roles[group.roles.length - 1].dates}${group.roles.length > 1 ? " · Multiple roles" : ""}`,
             callToAction: href ? (group.portfolioId ? "View Related Work" : "Open Portfolio Track") : null
         };
     });
