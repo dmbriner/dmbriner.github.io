@@ -194,7 +194,7 @@ function renderAboutPage(data) {
                 <div class="section-head">
                     <div>
                         <span class="eyebrow">Highlights</span>
-                        <h2 class="section-title">Highlights and Current Work.</h2>
+                        <h2 class="section-title">Highlights and current work.</h2>
                     </div>
                 </div>
                 <div class="card-grid">
@@ -391,21 +391,25 @@ function renderResumePage(data) {
                                                             )
                                                             .join("")}
                                                     </div>
-                                                    <div class="association-row">
-                                                        <a class="association-link" href="${group.href}">${group.callToAction}</a>
-                                                    </div>
+                                                    ${group.href && group.callToAction ? `
+                                                        <div class="association-row">
+                                                            <a class="association-link" href="${group.href}">${group.callToAction}</a>
+                                                        </div>
+                                                    ` : ""}
                                                 </details>
                                             `
                                         )
                                         .join("")}
                                 </div>
                             </article>
+                        </div>
 
+                        <div class="list-stack">
                             <article class="resume-card">
                                 <h3>Education</h3>
                                 <div class="timeline-stack">
                                     ${data.resume.education
-                                                .map(item => {
+                                        .map(item => {
                                             const relatedResearchLinks = (item.portfolioIds || [])
                                                 .map(id => findPortfolioItem(data, id))
                                                 .filter(Boolean)
@@ -419,7 +423,7 @@ function renderResumePage(data) {
                                                 .join("");
 
                                             return `
-                                                <details class="timeline-item disclosure-card education-card" id="${buildEducationAnchorId(item.school)}">
+                                                <details class="disclosure-card education-card" id="${buildEducationAnchorId(item.school)}">
                                                     <summary class="timeline-top disclosure-summary">
                                                         <div>
                                                             <p class="item-title logo-line">
@@ -436,14 +440,12 @@ function renderResumePage(data) {
                                                     </ul>
                                                     ${relatedResearchLinks ? `<div class="association-row">${relatedResearchLinks}</div>` : ""}
                                                 </details>
-                                            `
+                                            `;
                                         })
                                         .join("")}
                                 </div>
                             </article>
-                        </div>
 
-                        <div class="list-stack">
                             <article class="resume-card">
                                 <h3>Skills</h3>
                                 <div class="tag-row">
@@ -460,7 +462,8 @@ function renderResumePage(data) {
                                                 <a class="timeline-link-card" href="${buildPortfolioDetailHref(item.detailPath, researchSection.key)}">
                                                     <p class="item-title">${item.title}</p>
                                                     <p class="item-meta">${item.meta}</p>
-                                                    <p class="timeline-copy">${item.description}</p>
+                                                    <p class="timeline-copy">${item.summary || item.description}</p>
+                                                    ${renderAssociationLinks(item.associations)}
                                                 </a>
                                             `
                                         )
@@ -596,6 +599,7 @@ function setupPortfolioTabs(sections) {
                                         ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
                                     </div>
                                     <p class="card-copy">${item.description}</p>
+                                    ${renderAssociationLinks(item.associations)}
                                     <span class="portfolio-link">Open item</span>
                                 </a>
                             `
@@ -652,9 +656,24 @@ function renderPortfolioDetailPage(data) {
                         ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
                     </div>
                     <p class="card-copy detail-summary">${item.description}</p>
+                    ${renderAssociationLinks(item.associations)}
                     ${renderDetailContent(item)}
                 </article>
             </section>
+        </div>
+    `;
+}
+
+function renderAssociationLinks(associations) {
+    if (!associations || !associations.length) {
+        return "";
+    }
+
+    return `
+        <div class="association-row">
+            ${associations
+                .map(link => `<a class="association-link" href="${link.href}">${link.label}</a>`)
+                .join("")}
         </div>
     `;
 }
@@ -779,14 +798,14 @@ function groupExperienceByCompany(items) {
             ? buildPortfolioDetailHref(`/portfolio/item/?id=${group.portfolioId}`, group.portfolioTab || "")
             : group.portfolioTab
                 ? `/portfolio/?tab=${group.portfolioTab}`
-                : "/portfolio/";
+                : null;
 
         return {
             ...group,
             anchorId: buildExperienceAnchorId(group.company),
             href,
             summary: group.roles.length > 1 ? `${group.roles.length} roles` : group.roles[0].role,
-            callToAction: group.portfolioId ? "View Related Work" : "Open Portfolio Track"
+            callToAction: href ? (group.portfolioId ? "View Related Work" : "Open Portfolio Track") : null
         };
     });
 }

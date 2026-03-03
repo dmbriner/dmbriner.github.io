@@ -88,8 +88,8 @@ textarea {
 }
 
 .brand-mark {
-    width: 60px;
-    height: 50px;
+    width: 46px;
+    height: 38px;
     flex: 0 0 auto;
     object-fit: contain;
     object-position: center;
@@ -505,8 +505,8 @@ textarea {
 }
 
 .company-logo {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     flex: 0 0 auto;
 }
@@ -597,8 +597,8 @@ textarea {
 }
 
 .inline-logo {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
 }
 
@@ -623,8 +623,21 @@ textarea {
 
 .resume-grid {
     display: grid;
-    grid-template-columns: 1.35fr 0.65fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 20px;
+}
+
+.resume-grid > .list-stack {
+    align-content: start;
+}
+
+.education-card {
+    display: grid;
+    gap: 14px;
+}
+
+.timeline-link-card .association-row {
+    margin-top: 0;
 }
 
 .resume-card h3,

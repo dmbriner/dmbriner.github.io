@@ -62,8 +62,7 @@ window.siteData = {
                 details: [
                     "Work one-on-one with students on quantitative problem solving in economics and calculus.",
                     "Break down course material into clearer conceptual steps and repeatable methods."
-                ],
-                portfolioTab: "research"
+                ]
             },
             {
                 role: "Vice President of Outreach",
@@ -137,9 +136,7 @@ window.siteData = {
                 details: [
                     "Supported students in physics and mathematics with concept review and structured problem solving.",
                     "Focused on helping peers build durable analytical habits rather than one-off answers."
-                ],
-                portfolioTab: "research",
-                portfolioId: "detonation-and-decay"
+                ]
             },
             {
                 role: "Business Development and Marketing Intern",
@@ -266,6 +263,12 @@ window.siteData = {
                             "This work focused on event-driven options positioning around earnings announcements.",
                             "The strategy was built around historical earnings behavior, implied volatility context, and disciplined trade selection rather than discretionary entry alone.",
                             "It remains one of the clearest examples of how I like to combine data work with practical market structure."
+                        ],
+                        associations: [
+                            {
+                                label: "Carolina Investment Group",
+                                href: "/resume/#experience-carolina-investment-group"
+                            }
                         ]
                     },
                     {
@@ -296,20 +299,34 @@ window.siteData = {
                         title: "Detonation and Decay: The Physics and Persistent Hazards of Operation Redwing at Bikini and Enewetak Atolls",
                         meta: "May 2025 · Phillips Exeter Academy",
                         tag: "PDF",
+                        summary: "A research paper on Operation Redwing, thermonuclear escalation, and the lasting environmental consequences of fallout.",
                         description: "Authored a research paper examining Operation Redwing within the broader Cold War cycle of thermonuclear escalation, technological innovation, and environmental consequence. Inspired in part by my longstanding interest in nuclear physics — a discipline I intend to pursue at the collegiate level — the project also carried personal resonance: my grandfather, Charles Briner, coordinated monitoring systems during U.S. hydrogen bomb testing at Enewetak Atoll and received formal commendation for his work. The paper argues that although Operation Redwing refined thermonuclear yield prediction and fallout containment after the unexpectedly high outputs of Operation Castle, the physics of fission-driven fallout and neutron activation rendered long-term radiological harm unavoidable.",
                         detailPath: "/portfolio/item/?id=detonation-and-decay",
                         contentType: "pdf",
-                        pdfSrc: "/assets/pdfs/Detonation_and_Decay_Operation_Redwing.pdf"
+                        pdfSrc: "/assets/pdfs/Detonation_and_Decay_Operation_Redwing.pdf",
+                        associations: [
+                            {
+                                label: "Phillips Exeter Academy",
+                                href: "/resume/#education-phillips-exeter-academy"
+                            }
+                        ]
                     },
                     {
                         id: "historical-patterns-new-contexts",
                         title: "Historical Patterns, New Contexts: The Dodd-Frank Act and the Cycle of Regulation",
                         meta: "April 2024 - May 2024 · Phillips Exeter Academy",
                         tag: "PDF",
+                        summary: "A paper on Dodd-Frank as part of a longer cycle of crisis, regulation, and risk migration into shadow banking.",
                         description: "Authored a research paper on the Dodd-Frank Act, situated within a century-long cycle spanning financial crises, regulatory responses, and innovation. The paper’s central thesis is that Dodd-Frank, though comprehensive and well-intentioned, could not eliminate risk but merely redirected it, pushing leverage, liquidity transformation, and speculative activity into the alternative asset and shadow-banking sectors. Using the 2023 Silicon Valley Bank collapse as a case study, I argue that this outcome reflects the Act’s core limitation: regulation that does not change the underlying payoff structure—privatized gains and socialized losses—will fail to prevent future crises. By comparing Dodd-Frank to earlier efforts such as Glass–Steagall and Gramm-Leach-Bliley, the paper establishes unless managerial incentives are aligned with loss absorption, each new round of rules will re-route rather than resolve systemic vulnerability.",
                         detailPath: "/portfolio/item/?id=historical-patterns-new-contexts",
                         contentType: "pdf",
-                        pdfSrc: "/assets/pdfs/Historical_Patterns_New_Contexts_Dodd_Frank_Act_and_the_Cycle_of_Regulation.pdf"
+                        pdfSrc: "/assets/pdfs/Historical_Patterns_New_Contexts_Dodd_Frank_Act_and_the_Cycle_of_Regulation.pdf",
+                        associations: [
+                            {
+                                label: "Phillips Exeter Academy",
+                                href: "/resume/#education-phillips-exeter-academy"
+                            }
+                        ]
                     }
                 ]
             }
