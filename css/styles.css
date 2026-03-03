@@ -263,40 +263,18 @@ textarea {
 }
 
 .button,
-.button:visited {
-    color: #ffffff;
-    background: linear-gradient(180deg, #1f1f1f 0%, #111111 100%);
-    box-shadow: none;
-}
-
-.button:hover,
-.button:focus-visible,
-.ghost-button:hover,
-.tab-button:hover {
-    transform: translateY(-1px);
-}
-
+.button:visited,
 .button:hover,
 .button:focus-visible {
+    color: #ffffff;
+    background: var(--ink);
     box-shadow: var(--shadow-soft);
 }
 
-.button:focus {
-    outline: none;
-}
-
-.button:focus-visible,
-.ghost-button:focus-visible,
-.tab-button:focus-visible,
-.nav-link:focus-visible {
-    outline: 2px solid rgba(31, 79, 143, 0.32);
-    outline-offset: 3px;
-}
-
-.button:active,
-.ghost-button:active,
-.tab-button:active {
-    transform: translateY(0);
+.button:hover,
+.ghost-button:hover,
+.tab-button:hover {
+    transform: translateY(-1px);
 }
 
 .ghost-button,

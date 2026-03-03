@@ -8,12 +8,6 @@ window.addEventListener("DOMContentLoaded", () => {
     renderChrome(data, page);
     renderPage(page, data);
     setupForms();
-    setupPointerFocusReset();
-    clearLingeringPointerFocus();
-});
-
-window.addEventListener("pageshow", () => {
-    clearLingeringPointerFocus();
 });
 
 function renderChrome(data, page) {
@@ -84,27 +78,6 @@ function renderChrome(data, page) {
     });
 }
 
-function setupPointerFocusReset() {
-    document.addEventListener("pointerup", event => {
-        const target = event.target;
-        if (!(target instanceof Element)) {
-            return;
-        }
-
-        const interactive = target.closest("a.button, a.ghost-button, .nav-link");
-        if (interactive instanceof HTMLElement) {
-            window.requestAnimationFrame(() => interactive.blur());
-        }
-    }, { passive: true });
-}
-
-function clearLingeringPointerFocus() {
-    const activeElement = document.activeElement;
-    if (activeElement instanceof HTMLElement && activeElement.matches("a.button, a.ghost-button, .nav-link")) {
-        activeElement.blur();
-    }
-}
-
 function renderPage(page, data) {
     const root = document.getElementById("page-root");
     if (!root) {
@@ -155,10 +128,10 @@ function renderAboutPage(data) {
     const metricCards = (data.about.metrics || [])
         .map(
             item => `
-                <article class="metric">
+                <${item.href ? "a" : "article"} class="metric${item.href ? " metric-link" : ""}"${item.href ? ` href="${item.href}"` : ""}>
                     <p class="metric-value">${item.value}</p>
                     <p class="metric-label">${item.label}</p>
-                </article>
+                </${item.href ? "a" : "article"}>
             `
         )
         .join("");
@@ -215,7 +188,7 @@ function renderAboutPage(data) {
                     <h1 class="hero-title">${data.site.name}</h1>
                     <p class="hero-copy">${data.about.bio}</p>
                     <div class="hero-actions">
-                        <a class="button" href="/portfolio/">View Portfolio</a>
+                        <a class="ghost-button" href="/portfolio/">View Portfolio</a>
                         <a class="ghost-button" href="/resume/">Open Resume</a>
                     </div>
                     <div class="social-row">

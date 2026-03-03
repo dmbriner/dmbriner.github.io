@@ -22,9 +22,21 @@ window.siteData = {
     about: {
         bio: "First-year student at UNC Chapel Hill pursuing a B.A. in Business Administration with a concentration in Finance, a B.A. in Physics on the Quantitative Finance track, and a minor in Data Science. Experienced in financial regulation through research on Glass-Steagall, Gramm-Leach-Bliley, and Dodd-Frank, evaluating how regulatory shifts recalibrate market dynamics without altering underlying profit motives or managerial incentives, redirecting rather than resolving systemic vulnerability. Work at the North Carolina Chamber of Commerce extended this foundation, as the organization sits at the intersection of regulation and market dynamics. Research involved compiling skills taxonomies and NC labor-force data, which I found particularly engaging. Alongside a strong background in physics, statistics, and mathematics, this experience pushed my interests toward more quantitative, market-facing sectors of finance.",
         metrics: [
-            { value: "4.00", label: "Current GPA at UNC Chapel Hill" },
-            { value: "9", label: "Projects I'm currently working on" },
-            { value: "3", label: "Core academic areas: finance, physics, and data science" }
+            {
+                value: "January 2026",
+                label: "UPS stock recommendation",
+                href: "/portfolio/item/?id=ups-investment-thesis"
+            },
+            {
+                value: "Tickr",
+                label: "Tickr by Dana Briner",
+                href: "/portfolio/item/?id=tickr"
+            },
+            {
+                value: "March 3, 2026",
+                label: "Political Play-Dough: Keynesianism in Its 1960s Application",
+                href: "/blog/post/?id=political-play-dough-friedman-monetarism"
+            }
         ]
     },
     resume: {
