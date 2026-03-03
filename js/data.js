@@ -23,7 +23,7 @@ window.siteData = {
         bio: "First-year student at UNC Chapel Hill pursuing a B.A. in Business Administration with a concentration in Finance, a B.A. in Physics on the Quantitative Finance track, and a minor in Data Science. Experienced in financial regulation through research on Glass-Steagall, Gramm-Leach-Bliley, and Dodd-Frank, evaluating how regulatory shifts recalibrate market dynamics without altering underlying profit motives or managerial incentives, redirecting rather than resolving systemic vulnerability. Work at the North Carolina Chamber of Commerce extended this foundation, as the organization sits at the intersection of regulation and market dynamics. Research involved compiling skills taxonomies and NC labor-force data, which I found particularly engaging. Alongside a strong background in physics, statistics, and mathematics, this experience pushed my interests toward more quantitative, market-facing sectors of finance.",
         metrics: [
             { value: "4.00", label: "Current GPA at UNC Chapel Hill" },
-            { value: "2", label: "Published research papers currently available on-site" },
+            { value: "3", label: "Published research papers currently available on-site" },
             { value: "3", label: "Core academic areas: finance, physics, and data science" }
         ]
     },
@@ -158,7 +158,7 @@ window.siteData = {
                 degree: "High School Diploma",
                 dates: "September 2021 - June 2025",
                 summary: "Activities and Societies: Exeter Dance Company, STEM Peer Tutor, Bancroft Hall.",
-                portfolioIds: ["detonation-and-decay", "historical-patterns-new-contexts"],
+                portfolioIds: ["detonation-and-decay", "historical-patterns-new-contexts", "the-keynesian-elements-of-friedmans-beliefs"],
                 details: [
                     "Coursework: Modern Physics (General and Special Relativity, Quantum Mechanics); Applied Physics; and Capitalism and Its Critics (researched the progression of economic thought, engaging with the works of Malthus, Keynes, Friedman, Rawls, Hayek, Marx, Smith, and Locke)."
                 ]
@@ -318,6 +318,24 @@ window.siteData = {
                         detailPath: "/portfolio/item/?id=historical-patterns-new-contexts",
                         contentType: "pdf",
                         pdfSrc: "/assets/pdfs/Historical_Patterns_New_Contexts_Dodd_Frank_Act_and_the_Cycle_of_Regulation.pdf",
+                        associations: [
+                            {
+                                label: "Phillips Exeter Academy",
+                                href: "/resume/#education-phillips-exeter-academy",
+                                logo: "/assets/img/logos/phillips-exeter-academy.png"
+                            }
+                        ]
+                    },
+                    {
+                        id: "the-keynesian-elements-of-friedmans-beliefs",
+                        title: "The Keynesian Elements of Friedman's Beliefs",
+                        meta: "December 2024",
+                        tag: "PDF",
+                        summary: "A paper arguing that Friedman's macroeconomic views retained important Keynesian elements, especially where fiscal action mattered through its monetary effects.",
+                        description: "This paper traces the policy and intellectual arc from World War I credit expansion through the Great Depression, New Deal recovery debates, wartime finance, and the inflationary pressures of the 1960s and 1970s to argue that Milton Friedman's framework was less cleanly anti-Keynesian than the usual dichotomy suggests. The central claim is that Friedman rejected discretionary fiscal policy as an independent cure, but still accepted that deficit spending and taxation could matter when they changed the money supply and aggregate demand conditions in economically meaningful ways.",
+                        detailPath: "/portfolio/item/?id=the-keynesian-elements-of-friedmans-beliefs",
+                        contentType: "pdf",
+                        pdfSrc: "/assets/pdfs/The_Keynesian_Elements_of_Friedmans_Beliefs.pdf",
                         associations: [
                             {
                                 label: "Phillips Exeter Academy",
