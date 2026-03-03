@@ -23,7 +23,7 @@ window.siteData = {
         bio: "First-year student at UNC Chapel Hill pursuing a B.A. in Business Administration with a concentration in Finance, a B.A. in Physics on the Quantitative Finance track, and a minor in Data Science. Experienced in financial regulation through research on Glass-Steagall, Gramm-Leach-Bliley, and Dodd-Frank, evaluating how regulatory shifts recalibrate market dynamics without altering underlying profit motives or managerial incentives, redirecting rather than resolving systemic vulnerability. Work at the North Carolina Chamber of Commerce extended this foundation, as the organization sits at the intersection of regulation and market dynamics. Research involved compiling skills taxonomies and NC labor-force data, which I found particularly engaging. Alongside a strong background in physics, statistics, and mathematics, this experience pushed my interests toward more quantitative, market-facing sectors of finance.",
         metrics: [
             { value: "4.00", label: "Current GPA at UNC Chapel Hill" },
-            { value: "3", label: "Published research papers currently available on-site" },
+            { value: "9", label: "Projects I'm currently working on" },
             { value: "3", label: "Core academic areas: finance, physics, and data science" }
         ]
     },
@@ -331,8 +331,8 @@ window.siteData = {
                         title: "The Keynesian Elements of Friedman's Beliefs",
                         meta: "December 2024",
                         tag: "PDF",
-                        summary: "A paper arguing that Friedman's macroeconomic views retained important Keynesian elements, especially where fiscal action mattered through its monetary effects.",
-                        description: "This paper traces the policy and intellectual arc from World War I credit expansion through the Great Depression, New Deal recovery debates, wartime finance, and the inflationary pressures of the 1960s and 1970s to argue that Milton Friedman's framework was less cleanly anti-Keynesian than the usual dichotomy suggests. The central claim is that Friedman rejected discretionary fiscal policy as an independent cure, but still accepted that deficit spending and taxation could matter when they changed the money supply and aggregate demand conditions in economically meaningful ways.",
+                        summary: "A paper arguing that if the money supply expanded too rapidly, it would be inflationary and render any fiscal stimulus moot; if the money supply decreased massively, there would be a recession, likely preventing material fiscal stimulus in the first place.",
+                        description: "This paper follows the progression of economic thought from World War I credit expansion and the Great Depression through the New Deal, wartime finance, and the inflationary pressures of the late 1960s into the 1970s. It argues that Friedman believed that if the money supply expanded too rapidly, it would be inflationary, which would render any fiscal stimulus moot; if the money supply decreased massively, there would be a recession, likely preventing material fiscal stimulus in the first place. In that sense, the paper treats the usual Keynesian-monetarist divide as less absolute than it first appears.",
                         detailPath: "/portfolio/item/?id=the-keynesian-elements-of-friedmans-beliefs",
                         contentType: "pdf",
                         pdfSrc: "/assets/pdfs/The_Keynesian_Elements_of_Friedmans_Beliefs.pdf",
