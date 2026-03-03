@@ -61,8 +61,7 @@ window.siteData = {
                 details: [
                     "Coordinate outreach and speaker relationships to broaden the group's external network.",
                     "Help shape programming that connects members with finance professionals and firms."
-                ],
-                portfolioTab: "valuation"
+                ]
             },
             {
                 role: "Director of Academics",
@@ -85,8 +84,7 @@ window.siteData = {
                 details: [
                     "Contribute market research and transaction comparables for capital markets work.",
                     "Analyze debt and hybrid issuance alternatives in a capital structure context."
-                ],
-                portfolioTab: "valuation"
+                ]
             },
             {
                 role: "Quantitative Analyst",
@@ -358,7 +356,7 @@ window.siteData = {
                     "Then came the shocks that made the earlier errors impossible to disguise. The 1973 Arab oil embargo and the 1979 Iranian energy crisis engendered cost-push inflationary pressures on top of an economy already overheated by demand-pull inflation. These pressures combined to produce stagflation, the very condition Friedman had predicted in 1962. Inflation and unemployment rose together, and with that the practical authority of the old Keynesian policy framework began to collapse.",
                     "By the late 1970s, despite the Ford administration’s efforts, the country was grappling with precisely the conditions Friedman had warned about. Inflation lingered near 9 percent in 1975, climbed to 11 percent, and surged to 13.5 percent by 1980. Burns’s reputation faltered accordingly. He would be remembered as the man on watch during the Great Inflation, while Friedman enjoyed his most forceful I-told-you-so moment.",
                     "The 1979 appointment of Paul Volcker marked the decisive shift. Volcker redirected the Federal Reserve’s focus toward controlling the money supply to combat inflation, a move closely aligned with Friedman’s monetarism. The cost was severe. Unemployment peaked near 11 percent. Yet inflation receded, and by the close of the 1981 recession year-over-year inflation had fallen below 5 percent. In time, with the Fed’s commitment to low inflation established, unemployment declined and the economy entered a period of greater stability.",
-                    "What makes the story more interesting is the irony that followed. Monetarism was undeniably the correct theory for the stagflationary crisis of the 1970s. Yet Friedman’s monetarism was later rendered weaker by the very financial innovations that emerged alongside the deregulatory momentum of the 1980s. Credit default swaps, mortgage-backed securities, and collateralized debt obligations made it far more difficult to define and measure the money supply with the clarity monetarism required.",
+                    "In bitter irony, monetarism was undeniably the correct theory for the stagflationary crisis of the 1970s, yet Friedman’s monetarism was later rendered weaker by the very financial innovations that emerged alongside the deregulatory momentum of the 1980s. Credit default swaps, mortgage-backed securities, and collateralized debt obligations made it far more difficult to define and measure the money supply with the clarity monetarism required.",
                     "That is why I return to the phrase political play-dough. The real lesson is not simply that Friedman beat Keynes. It is that economic paradigms are not static doctrines. They are manipulated and repurposed to fit policymakers’ agendas regardless of their original theoretical intent. Keynesianism was stretched far beyond Keynes in the 1960s. Monetarism, later, was absorbed into a broader political and financial order that Friedman himself did not fully control. My view of 1960s Keynesianism is therefore not that it was authentically Keynesian, but that it became a politically convenient adaptation of Keynesian language whose inflationary logic Friedman saw more clearly than the people enshrining it."
                 ]
             }

@@ -272,6 +272,7 @@ function renderBlogPage(data) {
                             <div>
                                 <p class="item-title">${post.title}</p>
                                 <p class="item-meta">${post.date}</p>
+                                <p class="item-meta">By <a class="meta-link" href="/">Dana Briner</a></p>
                             </div>
                             <span class="tag">${post.category}</span>
                         </div>
@@ -366,6 +367,7 @@ function renderBlogDetailPage(data) {
                         <div>
                             <p class="item-title">${post.title}</p>
                             <p class="item-meta">${post.date}</p>
+                            <p class="item-meta">By <a class="meta-link" href="/">Dana Briner</a></p>
                         </div>
                         <span class="tag">${post.category}</span>
                     </div>

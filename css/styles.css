@@ -597,6 +597,17 @@ textarea {
     color: var(--muted);
 }
 
+.meta-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.14em;
+}
+
+.meta-link:hover,
+.meta-link:focus-visible {
+    color: var(--ink);
+}
+
 .project-icon {
     width: 24px;
     height: 24px;
