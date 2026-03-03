@@ -116,13 +116,13 @@ function renderPage(page, data) {
 }
 
 function renderAboutPage(data) {
-    const highlightCards = data.about.highlights
+    const metricCards = (data.about.metrics || [])
         .map(
             item => `
-                <a class="metric metric-link" href="${item.href}">
+                <article class="metric">
                     <p class="metric-value">${item.value}</p>
                     <p class="metric-label">${item.label}</p>
-                </a>
+                </article>
             `
         )
         .join("");
@@ -194,11 +194,11 @@ function renderAboutPage(data) {
                 <div class="section-head">
                     <div>
                         <span class="eyebrow">Highlights</span>
-                        <h2 class="section-title">Highlights.</h2>
+                        <h2 class="section-title">Highlights and current work.</h2>
                     </div>
                 </div>
                 <div class="card-grid">
-                    ${highlightCards}
+                    ${metricCards}
                 </div>
             </section>
 
@@ -367,7 +367,7 @@ function renderResumePage(data) {
                                                                 <img class="company-logo" src="${group.logo}" alt="${group.company} logo" />
                                                                 ${group.company}
                                                             </p>
-                                                            <p class="item-subtitle">${group.summary}</p>
+                                                            <p class="item-subtitle">${group.previewSummary}</p>
                                                             ${group.previewRoles.length ? `
                                                                 <div class="role-preview-stack">
                                                                     ${group.previewRoles
@@ -679,18 +679,18 @@ function renderAssociationLinks(associations) {
 function renderPortfolioCard(item, tabKey) {
     return `
         <article class="portfolio-card">
+            ${renderAssociationLinks(item.associations)}
             <div class="entry-top">
                 <div>
                     <p class="item-title title-with-icon">
                         ${item.logo ? `<img class="project-icon" src="${item.logo}" alt="" />` : ""}
                         ${item.title}
                     </p>
-                    <p class="item-meta">${item.meta}</p>
+                    ${item.meta ? `<p class="item-meta">${item.meta}</p>` : ""}
                 </div>
                 ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
             </div>
             <p class="card-copy">${item.description}</p>
-            ${renderAssociationLinks(item.associations)}
             <a class="portfolio-link" href="${buildPortfolioDetailHref(item.detailPath, tabKey)}">Open item</a>
         </article>
     `;
@@ -829,17 +829,27 @@ function groupExperienceByCompany(items) {
             : group.portfolioTab
                 ? `/portfolio/?tab=${group.portfolioTab}`
                 : null;
+        const previewSource = group.roles.map(role => role.description).join(" ");
 
         return {
             ...group,
             anchorId: buildExperienceAnchorId(group.company),
             href,
             summary: group.roles.map(role => role.role).join(" · "),
+            previewSummary: truncateText(previewSource, 180),
             dateSummary: `${group.roles[group.roles.length - 1].dates}${group.roles.length > 1 ? " · Multiple roles" : ""}`,
             previewRoles: group.roles.map(role => ({ role: role.role, dates: role.dates })),
             callToAction: href ? (group.portfolioId ? "View Related Work" : "Open Portfolio Track") : null
         };
     });
+}
+
+function truncateText(value, maxLength) {
+    if (!value || value.length <= maxLength) {
+        return value;
+    }
+
+    return `${value.slice(0, maxLength - 1).trimEnd()}...`;
 }
 
 function slugify(value) {

@@ -21,22 +21,10 @@ window.siteData = {
     ],
     about: {
         bio: "First-year student at UNC Chapel Hill pursuing a B.A. in Business Administration with a concentration in Finance, a B.A. in Physics on the Quantitative Finance track, and a minor in Data Science. Experienced in financial regulation through research on Glass-Steagall, Gramm-Leach-Bliley, and Dodd-Frank, evaluating how regulatory shifts recalibrate market dynamics without altering underlying profit motives or managerial incentives, redirecting rather than resolving systemic vulnerability. Work at the North Carolina Chamber of Commerce extended this foundation, as the organization sits at the intersection of regulation and market dynamics. Research involved compiling skills taxonomies and NC labor-force data, which I found particularly engaging. Alongside a strong background in physics, statistics, and mathematics, this experience pushed my interests toward more quantitative, market-facing sectors of finance.",
-        highlights: [
-            {
-                value: "Building",
-                label: "Tickr and a cleaner market research workflow.",
-                href: "/portfolio/item/?id=tickr&tab=engineering"
-            },
-            {
-                value: "Research",
-                label: "Academic work on Dodd-Frank and Operation Redwing.",
-                href: "/portfolio/?tab=research"
-            },
-            {
-                value: "Current Focus",
-                label: "Finance, physics, and data science at UNC Chapel Hill.",
-                href: "/resume/"
-            }
+        metrics: [
+            { value: "4.00", label: "Current GPA at UNC Chapel Hill" },
+            { value: "2", label: "Published research papers currently available on-site" },
+            { value: "3", label: "Core academic areas: finance, physics, and data science" }
         ]
     },
     resume: {
@@ -235,14 +223,20 @@ window.siteData = {
                     {
                         id: "ups-investment-thesis",
                         title: "UPS Investment Thesis",
-                        meta: "Placeholder",
-                        tag: "Coming Soon",
-                        description: "A dedicated placeholder for an upcoming UPS investment thesis PDF and supporting valuation work that will be added to this section.",
+                        logo: "/assets/img/logos/ups.png",
+                        meta: "January 2026",
+                        tag: "PDF",
+                        summary: "A thesis arguing that UPS combines resilient network density, improving domestic-ground execution, and a valuation that may understate normalization potential.",
+                        description: "This investment thesis frames UPS as a large-scale logistics platform whose domestic package network, service-density advantages, and recent operating adjustments create a more durable earnings base than the market may be fully crediting. The write-up focuses on the domestic segment's role in U.S. letters, documents, and package delivery, the strategic importance of Ground Saver within last-mile execution, and the possibility that recent relative underperformance has obscured medium-term upside as operations normalize.",
                         detailPath: "/portfolio/item/?id=ups-investment-thesis",
-                        contentType: "note",
-                        detailBody: [
-                            "This page is reserved for a future UPS investment thesis PDF.",
-                            "Once the write-up is finalized, the embedded document and any supporting valuation materials will be added here."
+                        contentType: "pdf",
+                        pdfSrc: "/assets/pdfs/upsrecommendation.pdf",
+                        associations: [
+                            {
+                                label: "UPS",
+                                href: "https://www.ups.com/us/en/Home.page",
+                                logo: "/assets/img/logos/ups.png"
+                            }
                         ]
                     }
                 ]
@@ -255,7 +249,7 @@ window.siteData = {
                     {
                         id: "pre-earnings-atm-calendar-spread-strategy",
                         title: "Pre-Earnings ATM Calendar Spread Strategy",
-                        meta: "Carolina Investment Group",
+                        meta: "September 2025 - Present",
                         tag: "Options",
                         description: "Developed and executed a data-driven pre-earnings strategy using historical earnings analysis, options pricing, and disciplined trade selection.",
                         detailPath: "/portfolio/item/?id=pre-earnings-atm-calendar-spread-strategy",
