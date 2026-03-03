@@ -129,6 +129,7 @@ function renderAboutPage(data) {
         .map(
             item => `
                 <${item.href ? "a" : "article"} class="metric${item.href ? " metric-link" : ""}"${item.href ? ` href="${item.href}"` : ""}>
+                    ${item.tag ? `<span class="feature-kicker">${item.tag}</span>` : ""}
                     <p class="metric-value">${item.value}</p>
                     <p class="metric-label">${item.label}</p>
                 </${item.href ? "a" : "article"}>

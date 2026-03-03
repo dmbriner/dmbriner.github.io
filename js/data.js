@@ -25,16 +25,19 @@ window.siteData = {
             {
                 value: "January 2026",
                 label: "UPS stock recommendation",
+                tag: "Portfolio · Valuation",
                 href: "/portfolio/item/?id=ups-investment-thesis"
             },
             {
                 value: "Tickr",
                 label: "Tickr by Dana Briner",
+                tag: "Portfolio · Engineering",
                 href: "/portfolio/item/?id=tickr"
             },
             {
                 value: "March 3, 2026",
                 label: "Political Play-Dough: Keynesianism in Its 1960s Application",
+                tag: "Blog",
                 href: "/blog/post/?id=political-play-dough-friedman-monetarism"
             }
         ]
