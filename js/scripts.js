@@ -8,6 +8,12 @@ window.addEventListener("DOMContentLoaded", () => {
     renderChrome(data, page);
     renderPage(page, data);
     setupForms();
+    setupPointerFocusReset();
+    clearLingeringPointerFocus();
+});
+
+window.addEventListener("pageshow", () => {
+    clearLingeringPointerFocus();
 });
 
 function renderChrome(data, page) {
@@ -76,6 +82,27 @@ function renderChrome(data, page) {
             toggle.setAttribute("aria-expanded", "false");
         });
     });
+}
+
+function setupPointerFocusReset() {
+    document.addEventListener("pointerup", event => {
+        const target = event.target;
+        if (!(target instanceof Element)) {
+            return;
+        }
+
+        const interactive = target.closest("a.button, a.ghost-button, .nav-link");
+        if (interactive instanceof HTMLElement) {
+            window.requestAnimationFrame(() => interactive.blur());
+        }
+    }, { passive: true });
+}
+
+function clearLingeringPointerFocus() {
+    const activeElement = document.activeElement;
+    if (activeElement instanceof HTMLElement && activeElement.matches("a.button, a.ghost-button, .nav-link")) {
+        activeElement.blur();
+    }
 }
 
 function renderPage(page, data) {
