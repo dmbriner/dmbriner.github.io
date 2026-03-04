@@ -87,18 +87,19 @@ textarea {
     min-width: 0;
 }
 
+.brand-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
 .brand-mark {
     width: 46px;
     height: 38px;
     flex: 0 0 auto;
     object-fit: contain;
     object-position: center;
-}
-
-.brand-copy {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
 }
 
 .brand-name {
@@ -108,9 +109,36 @@ textarea {
     line-height: 1;
 }
 
+.brand-tag-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
 .brand-tag {
     color: var(--muted);
     font-size: 0.94rem;
+    text-align: left;
+}
+
+.brand-tag-indicator {
+    padding: 2px 8px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    opacity: 0;
+    transform: translateY(-1px);
+    transition: opacity var(--transition);
+}
+
+.brand-tag-toggle.is-open .brand-tag-indicator {
+    opacity: 1;
 }
 
 .nav-links {
@@ -1012,7 +1040,7 @@ textarea {
         min-height: 620px;
     }
 
-    .brand-tag {
+    .brand-tag-toggle {
         display: none;
     }
 }

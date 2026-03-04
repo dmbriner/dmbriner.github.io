@@ -360,7 +360,7 @@ window.siteData = {
                 title: "Political Play-Dough: Keynesianism in Its 1960s Application",
                 date: "March 3, 2026",
                 category: "Opinion",
-                excerpt: "Keynes and Friedman converged more than the usual caricature allows. My issue is not Keynesianism in theory, but its bastardized 1960s application, which treated unemployment below the natural rate as sacrosanct and inflation as something policymakers could manage or obscure.",
+                excerpt: "Keynes and Friedman converged more than the usual caricature allows.",
                 href: "/blog/post/?id=political-play-dough-friedman-monetarism",
                 body: [
                     "John Maynard Keynes admitted that the quantity theory of money was valid at full employment. An increase in effective demand beyond full employment would raise prices rather than output, which is precisely why Milton Friedman’s reading of post-war inflation carried so much force. If the money supply expanded too rapidly, it would be inflationary and render fiscal stimulus moot. If the money supply contracted massively, recession would likely prevent material fiscal stimulus in the first place. Keynes and Friedman converged more than the usual caricature allows.",

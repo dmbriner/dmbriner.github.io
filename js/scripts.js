@@ -31,13 +31,16 @@ function renderChrome(data, page) {
     header.innerHTML = `
         <div class="site-header">
             <nav class="site-nav" aria-label="Primary">
-                <a class="brand" href="/" aria-label="${data.site.name} home">
-                    <img class="brand-mark" src="${data.site.logo}" alt="" />
-                    <span class="brand-copy">
+                <div class="brand">
+                    <a class="brand-home" href="/" aria-label="${data.site.name} home">
+                        <img class="brand-mark" src="${data.site.logo}" alt="" />
                         <span class="brand-name">${data.site.name}</span>
+                    </a>
+                    <button class="brand-tag-toggle" type="button" aria-expanded="false" aria-label="Show tagline label">
                         <span class="brand-tag">${data.site.tagline}</span>
-                    </span>
-                </a>
+                        <span class="brand-tag-indicator">Tagline</span>
+                    </button>
+                </div>
                 <div class="nav-links">${navLinks}</div>
                 <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
                     <span class="nav-toggle-line"></span>
@@ -65,11 +68,19 @@ function renderChrome(data, page) {
     `;
 
     const toggle = header.querySelector(".nav-toggle");
+    const taglineToggle = header.querySelector(".brand-tag-toggle");
     const mobileLinks = header.querySelectorAll(".mobile-sheet .nav-link");
     toggle.addEventListener("click", () => {
         const open = document.body.classList.toggle("nav-open");
         toggle.setAttribute("aria-expanded", String(open));
     });
+    if (taglineToggle) {
+        taglineToggle.addEventListener("click", () => {
+            const expanded = taglineToggle.getAttribute("aria-expanded") === "true";
+            taglineToggle.setAttribute("aria-expanded", String(!expanded));
+            taglineToggle.classList.toggle("is-open", !expanded);
+        });
+    }
     mobileLinks.forEach(link => {
         link.addEventListener("click", () => {
             document.body.classList.remove("nav-open");
