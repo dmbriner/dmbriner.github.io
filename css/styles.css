@@ -810,6 +810,23 @@ textarea {
     margin: 0;
 }
 
+.detail-summary-block {
+    display: grid;
+    gap: 10px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--accent-soft);
+}
+
+.detail-summary-label {
+    margin: 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
 .detail-body {
     display: grid;
     gap: 14px;

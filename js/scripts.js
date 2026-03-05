@@ -383,7 +383,10 @@ function renderBlogDetailPage(data) {
                         </div>
                         <span class="tag">${post.category}</span>
                     </div>
-                    <p class="card-copy detail-summary">${post.excerpt}</p>
+                    <div class="detail-summary-block" aria-label="Post preview summary">
+                        <p class="detail-summary-label">Preview / Summary</p>
+                        <p class="card-copy detail-summary">${post.excerpt}</p>
+                    </div>
                     <div class="detail-body">
                         ${body}
                     </div>
