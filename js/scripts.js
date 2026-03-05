@@ -60,6 +60,7 @@ function renderChrome(data, page) {
         <footer class="footer">
             <div class="footer-inner">
                 <p class="footer-copy">Built as a static portfolio with responsive navigation, PDF export, and updated branding assets.</p>
+                <p class="footer-copy">&copy; ${new Date().getFullYear()} ${data.site.name}. All rights reserved.</p>
                 <div class="social-row">
                     <a class="ghost-button" href="${data.site.linkedin}" target="_blank" rel="noreferrer">LinkedIn</a>
                     <a class="ghost-button" href="${data.site.github}" target="_blank" rel="noreferrer">GitHub</a>
