@@ -32,14 +32,16 @@ function renderChrome(data, page) {
         <div class="site-header">
             <nav class="site-nav" aria-label="Primary">
                 <div class="brand">
-                    <a class="brand-home" href="/" aria-label="${data.site.name} home">
-                        <img class="brand-mark" src="${data.site.logo}" alt="" />
-                        <span class="brand-name">${data.site.name}</span>
-                    </a>
-                    <button class="brand-tag-toggle" type="button" aria-expanded="false" aria-label="Show tagline label">
-                        <span class="brand-tag">${data.site.tagline}</span>
-                        <span class="brand-tag-indicator">Tagline</span>
-                    </button>
+                    <img class="brand-mark" src="${data.site.logo}" alt="" />
+                    <span class="brand-copy">
+                        <a class="brand-home" href="/" aria-label="${data.site.name} home">
+                            <span class="brand-name">${data.site.name}</span>
+                        </a>
+                        <button class="brand-tag-toggle" type="button" aria-expanded="false" aria-label="Show tagline label">
+                            <span class="brand-tag">${data.site.tagline}</span>
+                            <span class="brand-tag-indicator">Tagline</span>
+                        </button>
+                    </span>
                 </div>
                 <div class="nav-links">${navLinks}</div>
                 <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">

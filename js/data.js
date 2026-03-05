@@ -33,12 +33,6 @@ window.siteData = {
                 label: "Tickr by Dana Briner",
                 tag: "Portfolio · Engineering",
                 href: "/portfolio/item/?id=tickr"
-            },
-            {
-                value: "March 3, 2026",
-                label: "Political Play-Dough: Keynesianism in Its 1960s Application",
-                tag: "Blog",
-                href: "/blog/post/?id=political-play-dough-friedman-monetarism"
             }
         ]
     },
@@ -296,15 +290,15 @@ window.siteData = {
                 description: "Academic papers and longer-form analytical work already present in the repository.",
                 items: [
                     {
-                        id: "detonation-and-decay",
-                        title: "Detonation and Decay: The Physics and Persistent Hazards of Operation Redwing at Bikini and Enewetak Atolls",
-                        meta: "May 2025",
+                        id: "separation-to-speculation-glba",
+                        title: "Separation to Speculation: How Gramm-Leach-Bliley Bolstered Deregulatory Ambition",
+                        meta: "March 2026",
                         tag: "PDF",
-                        summary: "A research paper on Operation Redwing, thermonuclear escalation, and the lasting environmental consequences of fallout.",
-                        description: "Authored a research paper examining Operation Redwing within the broader Cold War cycle of thermonuclear escalation, technological innovation, and environmental consequence. Inspired in part by my longstanding interest in nuclear physics — a discipline I intend to pursue at the collegiate level — the project also carried personal resonance: my grandfather, Charles Briner, coordinated monitoring systems during U.S. hydrogen bomb testing at Enewetak Atoll and received formal commendation for his work. The paper argues that although Operation Redwing refined thermonuclear yield prediction and fallout containment after the unexpectedly high outputs of Operation Castle, the physics of fission-driven fallout and neutron activation rendered long-term radiological harm unavoidable.",
-                        detailPath: "/portfolio/item/?id=detonation-and-decay",
+                        summary: "A paper arguing that GLBA did not single-handedly cause the 2008 crisis, but codified a broader deregulatory momentum that redefined commercial banking and amplified systemic risk.",
+                        description: "This paper argues that the Gramm-Leach-Bliley Act of 1999 did not independently cause the 2008 Financial Crisis, but actualized a longer deregulatory trajectory that politically and structurally redefined the commercial bank. By repealing core Glass-Steagall separations, GLBA ratified practices that had already expanded through regulatory reinterpretation, globalization pressures, and permissive monetary policy, thereby enabling speculative behavior at greater scale.",
+                        detailPath: "/portfolio/item/?id=separation-to-speculation-glba",
                         contentType: "pdf",
-                        pdfSrc: "/assets/pdfs/Detonation_and_Decay_Operation_Redwing.pdf",
+                        pdfSrc: "/assets/pdfs/glba.pdf",
                         associations: [
                             {
                                 label: "Phillips Exeter Academy",
@@ -348,33 +342,30 @@ window.siteData = {
                                 logo: "/assets/img/logos/phillips-exeter-academy.png"
                             }
                         ]
+                    },
+                    {
+                        id: "detonation-and-decay",
+                        title: "Detonation and Decay: The Physics and Persistent Hazards of Operation Redwing at Bikini and Enewetak Atolls",
+                        meta: "May 2025",
+                        tag: "PDF",
+                        summary: "A research paper on Operation Redwing, thermonuclear escalation, and the lasting environmental consequences of fallout.",
+                        description: "Authored a research paper examining Operation Redwing within the broader Cold War cycle of thermonuclear escalation, technological innovation, and environmental consequence. Inspired in part by my longstanding interest in nuclear physics — a discipline I intend to pursue at the collegiate level — the project also carried personal resonance: my grandfather, Charles Briner, coordinated monitoring systems during U.S. hydrogen bomb testing at Enewetak Atoll and received formal commendation for his work. The paper argues that although Operation Redwing refined thermonuclear yield prediction and fallout containment after the unexpectedly high outputs of Operation Castle, the physics of fission-driven fallout and neutron activation rendered long-term radiological harm unavoidable.",
+                        detailPath: "/portfolio/item/?id=detonation-and-decay",
+                        contentType: "pdf",
+                        pdfSrc: "/assets/pdfs/Detonation_and_Decay_Operation_Redwing.pdf",
+                        associations: [
+                            {
+                                label: "Phillips Exeter Academy",
+                                href: "/resume/#education-phillips-exeter-academy",
+                                logo: "/assets/img/logos/phillips-exeter-academy.png"
+                            }
+                        ]
                     }
                 ]
             }
         ]
     },
     blog: {
-        posts: [
-            {
-                id: "political-play-dough-friedman-monetarism",
-                title: "Political Play-Dough: Keynesianism in Its 1960s Application",
-                date: "March 3, 2026",
-                category: "Opinion",
-                excerpt: "Keynes and Friedman converged more than the usual caricature allows.",
-                href: "/blog/post/?id=political-play-dough-friedman-monetarism",
-                body: [
-                    "John Maynard Keynes admitted that the quantity theory of money was valid at full employment. An increase in effective demand beyond full employment would raise prices rather than output, which is precisely why Milton Friedman’s reading of post-war inflation carried so much force. If the money supply expanded too rapidly, it would be inflationary and render fiscal stimulus moot. If the money supply contracted massively, recession would likely prevent material fiscal stimulus in the first place. Keynes and Friedman converged more than the usual caricature allows.",
-                    "My issue, then, is not Keynesianism in theory. It is Keynesianism in its 1960s application. Under Lyndon B. Johnson, the Great Society operated on a bastardized version of Keynesianism that repurposed demand management into a political instrument for reducing unemployment to a socially acceptable low level below the natural rate of unemployment. Johnson’s tax cuts, coupled with Great Society spending and the costs of the Vietnam War, proved inflationary. By 1968, prices had risen 4.7 percent and threatened further escalation so long as artificially low unemployment remained politically sacrosanct.",
-                    "That was the real flaw in the era’s Keynesian orthodoxy. It was not merely expansive. It was overconfident. The Phillips Curve, introduced by A. W. Phillips in 1958, seemed to justify a trade-off between unemployment and wage inflation and thus gave technocratic cover to a policy regime that treated inflation as a manageable cost of stronger employment. In practice, this encouraged policymakers to believe they could force unemployment below its natural level and fine-tune the consequences later.",
-                    "Friedman challenged that logic directly. He argued that the trade-off was only temporary and would persist only so long as workers failed to account for inflation. Once governments repeatedly resorted to monetary expansion to push unemployment below its natural level, workers would shed that money illusion and demand higher wages to match expected price increases. The result would be an induced wage-price spiral. That critique was not merely theoretical. It described the inflationary logic already embedded in the policy choices of the 1960s.",
-                    "Richard Nixon inherited those pressures and chose avoidance. His New Economic Plan, rolled out in phases from 1971 to 1974, paired tax cuts with wage and price controls designed to feign disinflation while sustaining low unemployment. The strategy was politically intelligible and economically hollow. It obscured mounting inflationary pressure rather than confronting it. Arthur Burns reinforced the same mentality at the Federal Reserve by leaning on the Phillips-Curve trade-off and preserving the view that price behavior was an unreliable measure of full employment.",
-                    "Then came the shocks that made the earlier errors impossible to disguise. The 1973 Arab oil embargo and the 1979 Iranian energy crisis engendered cost-push inflationary pressures on top of an economy already overheated by demand-pull inflation. These pressures combined to produce stagflation, the very condition Friedman had predicted in 1962. Inflation and unemployment rose together, and with that the practical authority of the old Keynesian policy framework began to collapse.",
-                    "By the late 1970s, despite the Ford administration’s efforts, the country was grappling with precisely the conditions Friedman had warned about. Inflation lingered near 9 percent in 1975, climbed to 11 percent, and surged to 13.5 percent by 1980. Burns’s reputation faltered accordingly. He would be remembered as the man on watch during the Great Inflation, while Friedman enjoyed his most forceful I-told-you-so moment.",
-                    "The 1979 appointment of Paul Volcker marked the decisive shift. Volcker redirected the Federal Reserve’s focus toward controlling the money supply to combat inflation, a move closely aligned with Friedman’s monetarism. The cost was severe. Unemployment peaked near 11 percent. Yet inflation receded, and by the close of the 1981 recession year-over-year inflation had fallen below 5 percent. In time, with the Fed’s commitment to low inflation established, unemployment declined and the economy entered a period of greater stability.",
-                    "In bitter irony, monetarism was undeniably the correct theory for the stagflationary crisis of the 1970s, yet Friedman’s monetarism was later rendered weaker by the very financial innovations that emerged alongside the deregulatory momentum of the 1980s. Credit default swaps, mortgage-backed securities, and collateralized debt obligations made it far more difficult to define and measure the money supply with the clarity monetarism required.",
-                    "That is why I return to the phrase political play-dough. The real lesson is not simply that Friedman beat Keynes. It is that economic paradigms are not static doctrines. They are manipulated and repurposed to fit policymakers’ agendas regardless of their original theoretical intent. Keynesianism was stretched far beyond Keynes in the 1960s. Monetarism, later, was absorbed into a broader political and financial order that Friedman himself did not fully control. My view of 1960s Keynesianism is therefore not that it was authentically Keynesian, but that it became a politically convenient adaptation of Keynesian language whose inflationary logic Friedman saw more clearly than the people enshrining it."
-                ]
-            }
-        ]
+        posts: []
     }
 };
