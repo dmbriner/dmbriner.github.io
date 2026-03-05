@@ -23,21 +23,40 @@ window.siteData = {
         bio: "First-year student at UNC Chapel Hill pursuing a B.A. in Business Administration with a concentration in Finance, a B.A. in Physics on the Quantitative Finance track, and a minor in Data Science. Experienced in financial regulation through research on Glass-Steagall, Gramm-Leach-Bliley, and Dodd-Frank, evaluating how regulatory shifts recalibrate market dynamics without altering underlying profit motives or managerial incentives, redirecting rather than resolving systemic vulnerability. Work at the North Carolina Chamber of Commerce extended this foundation, as the organization sits at the intersection of regulation and market dynamics. Research involved compiling skills taxonomies and NC labor-force data, which I found particularly engaging. Alongside a strong background in physics, statistics, and mathematics, this experience pushed my interests toward more quantitative, market-facing sectors of finance.",
         metrics: [
             {
-                value: "January 2026",
-                label: "UPS stock recommendation",
-                tag: "Portfolio · Valuation",
-                href: "/portfolio/item/?id=ups-investment-thesis"
+                value: "May 2026",
+                label: "Incoming wealth management internship",
+                tag: "Investors Trust Company",
+                href: "/resume/#experience-investors-trust-company"
             },
             {
-                value: "Tickr",
-                label: "Tickr by Dana Briner",
+                value: "Spring 2026",
+                label: "Alpha Phi academic database build",
                 tag: "Portfolio · Engineering",
-                href: "/portfolio/item/?id=tickr"
+                href: "/portfolio/item/?id=alpha-phi-academic-database"
+            },
+            {
+                value: "January 2026",
+                label: "UPS thesis to client-ready framework",
+                tag: "Portfolio · Valuation",
+                href: "/portfolio/item/?id=ups-investment-thesis"
             }
         ]
     },
     resume: {
         experience: [
+            {
+                role: "Incoming Wealth Management Intern",
+                company: "Investors Trust Company",
+                logo: "/assets/img/logos/invtrust_logo.jpg",
+                dates: "May 2026 - August 2026",
+                description: "Incoming Summer 2026 intern in wealth management, expected to support research and investment communication workflows across client-focused teams.",
+                details: [
+                    "Use prior equity-research work, including the UPS report from my application, as an example framework for concise, client-ready analysis.",
+                    "Support wealth-management workflows through market research, portfolio context building, and investment communication materials as assigned."
+                ],
+                portfolioTab: "valuation",
+                portfolioId: "ups-investment-thesis"
+            },
             {
                 role: "Intern",
                 company: "Variant",
@@ -77,12 +96,13 @@ window.siteData = {
                 company: "Alpha Phi International Fraternity",
                 logo: "/assets/img/logos/alpha-phi-international-fraternity.png",
                 dates: "November 2025 - Present",
-                description: "Oversee chapter academic standards, accountability measures, and programming designed to improve academic performance across the membership.",
+                description: "Oversee chapter academic standards and interventions while building an internal academic database to improve visibility into member performance trends and support planning.",
                 details: [
-                    "Manage academic expectations and accountability across the chapter.",
-                    "Support programming aimed at improving member performance and study habits."
+                    "Design and build a chapter-level academic database to track GPA trends, study-hour compliance, and intervention flags.",
+                    "Use this data to target tutoring resources, strengthen accountability, and improve programming tied to member performance."
                 ],
-                portfolioTab: "research"
+                portfolioTab: "engineering",
+                portfolioId: "alpha-phi-academic-database"
             },
             {
                 role: "Analyst",
@@ -202,6 +222,29 @@ window.siteData = {
                         ]
                     },
                     {
+                        id: "alpha-phi-academic-database",
+                        title: "Alpha Phi Academic Operations Database",
+                        logo: "/assets/img/logos/alpha-phi-international-fraternity.png",
+                        meta: "In Progress · Director of Academics Workflow Build",
+                        tag: "Build",
+                        description: "An in-progress internal database to support Alpha Phi academic operations by centralizing member GPA data, support interventions, and accountability workflows.",
+                        detailPath: "/portfolio/item/?id=alpha-phi-academic-database",
+                        contentType: "note",
+                        detailBody: [
+                            "This build translates my Director of Academics responsibilities into a repeatable data workflow instead of ad-hoc tracking.",
+                            "The database is being structured to monitor GPA trends, identify members who need support earlier, and document tutoring and study-plan follow-through.",
+                            "The goal is a cleaner operational system for academic performance management that can scale across semesters.",
+                            "A GitHub repository link will be added here once the project is ready to share."
+                        ],
+                        associations: [
+                            {
+                                label: "Alpha Phi International Fraternity",
+                                href: "/resume/#experience-alpha-phi-international-fraternity",
+                                logo: "/assets/img/logos/alpha-phi-international-fraternity.png"
+                            }
+                        ]
+                    },
+                    {
                         id: "openbb-terminal-workflow",
                         title: "OpenBB Terminal Workflow",
                         logo: "/assets/img/logos/openbb.png",
@@ -290,24 +333,6 @@ window.siteData = {
                 description: "Academic papers and longer-form analytical work already present in the repository.",
                 items: [
                     {
-                        id: "separation-to-speculation-glba",
-                        title: "Separation to Speculation: How Gramm-Leach-Bliley Bolstered Deregulatory Ambition",
-                        meta: "November 2024",
-                        tag: "PDF",
-                        summary: "A paper arguing that GLBA did not single-handedly cause the 2008 crisis, but codified a broader deregulatory momentum that redefined commercial banking and amplified systemic risk.",
-                        description: "This paper argues that the Gramm-Leach-Bliley Act of 1999 did not independently cause the 2008 Financial Crisis, but actualized a longer deregulatory trajectory that politically and structurally redefined the commercial bank. By repealing core Glass-Steagall separations, GLBA ratified practices that had already expanded through regulatory reinterpretation, globalization pressures, and permissive monetary policy, thereby enabling speculative behavior at greater scale.",
-                        detailPath: "/portfolio/item/?id=separation-to-speculation-glba",
-                        contentType: "pdf",
-                        pdfSrc: "/assets/pdfs/glba.pdf",
-                        associations: [
-                            {
-                                label: "Phillips Exeter Academy",
-                                href: "/resume/#education-phillips-exeter-academy",
-                                logo: "/assets/img/logos/phillips-exeter-academy.png"
-                            }
-                        ]
-                    },
-                    {
                         id: "historical-patterns-new-contexts",
                         title: "Historical Patterns, New Contexts: The Dodd-Frank Act and the Cycle of Regulation",
                         meta: "April 2024 - May 2024",
@@ -317,6 +342,24 @@ window.siteData = {
                         detailPath: "/portfolio/item/?id=historical-patterns-new-contexts",
                         contentType: "pdf",
                         pdfSrc: "/assets/pdfs/Historical_Patterns_New_Contexts_Dodd_Frank_Act_and_the_Cycle_of_Regulation.pdf",
+                        associations: [
+                            {
+                                label: "Phillips Exeter Academy",
+                                href: "/resume/#education-phillips-exeter-academy",
+                                logo: "/assets/img/logos/phillips-exeter-academy.png"
+                            }
+                        ]
+                    },
+                    {
+                        id: "separation-to-speculation-glba",
+                        title: "Separation to Speculation: How Gramm-Leach-Bliley Bolstered Deregulatory Ambition",
+                        meta: "November 2024",
+                        tag: "PDF",
+                        summary: "A paper arguing that GLBA did not single-handedly cause the 2008 crisis, but codified a broader deregulatory momentum that redefined commercial banking and amplified systemic risk.",
+                        description: "This paper argues that the Gramm-Leach-Bliley Act of 1999 did not independently cause the 2008 Financial Crisis, but actualized a longer deregulatory trajectory that politically and structurally redefined the commercial bank. By repealing core Glass-Steagall separations, GLBA ratified practices that had already expanded through regulatory reinterpretation, globalization pressures, and permissive monetary policy, thereby enabling speculative behavior at greater scale.",
+                        detailPath: "/portfolio/item/?id=separation-to-speculation-glba",
+                        contentType: "pdf",
+                        pdfSrc: "/assets/pdfs/glba.pdf",
                         associations: [
                             {
                                 label: "Phillips Exeter Academy",
