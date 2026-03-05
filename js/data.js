@@ -233,9 +233,9 @@ window.siteData = {
                         detailBody: [
                             "This build translates my Director of Academics responsibilities into a repeatable data workflow instead of ad-hoc tracking.",
                             "The database is being structured to monitor GPA trends, identify members who need support earlier, and document tutoring and study-plan follow-through.",
-                            "The goal is a cleaner operational system for academic performance management that can scale across semesters.",
-                            "A GitHub repository link will be added here once the project is ready to share."
+                            "The goal is a cleaner operational system for academic performance management that can scale across semesters."
                         ],
+                        links: [{ label: "View GitHub Repository", url: "https://github.com/dmbriner/alpha-phi-academics" }],
                         associations: [
                             {
                                 label: "Alpha Phi International Fraternity",
@@ -279,7 +279,14 @@ window.siteData = {
                         description: "This investment thesis frames UPS as a large-scale logistics platform whose domestic package network, service-density advantages, and recent operating adjustments create a more durable earnings base than the market may be fully crediting. The write-up focuses on the domestic segment's role in U.S. letters, documents, and package delivery, the strategic importance of Ground Saver within last-mile execution, and the possibility that recent relative underperformance has obscured medium-term upside as operations normalize.",
                         detailPath: "/portfolio/item/?id=ups-investment-thesis",
                         contentType: "pdf",
-                        pdfSrc: "/assets/pdfs/upsrecommendation.pdf"
+                        pdfSrc: "/assets/pdfs/upsrecommendation.pdf",
+                        associations: [
+                            {
+                                label: "Investors Trust Company",
+                                href: "/resume/#experience-investors-trust-company",
+                                logo: "/assets/img/logos/invtrust_logo.jpg"
+                            }
+                        ]
                     }
                 ]
             },
