@@ -227,15 +227,15 @@ window.siteData = {
                         logo: "/assets/img/logos/alpha-phi-international-fraternity.png",
                         meta: "In Progress · Director of Academics Workflow Build",
                         tag: "Build",
-                        description: "An in-progress internal database to support Alpha Phi academic operations by centralizing member GPA data, support interventions, and accountability workflows.",
+                        description: "An in-progress internal platform where members upload and view course files, while chapter course reviews automatically flow into an exportable Excel-ready recommendations workflow.",
                         detailPath: "/portfolio/item/?id=alpha-phi-academic-database",
-                        contentType: "note",
-                        detailBody: [
-                            "This build translates my Director of Academics responsibilities into a repeatable data workflow instead of ad-hoc tracking.",
-                            "The database is being structured to monitor GPA trends, identify members who need support earlier, and document tutoring and study-plan follow-through.",
-                            "The goal is a cleaner operational system for academic performance management that can scale across semesters."
+                        contentType: "external-preview",
+                        embedSrc: "https://dmbriner.github.io/alpha-phi-academics/",
+                        embedLabel: "Alpha Phi Academics Preview",
+                        links: [
+                            { label: "Open Live Preview", url: "https://dmbriner.github.io/alpha-phi-academics/" },
+                            { label: "View GitHub Repository", url: "https://github.com/dmbriner/alpha-phi-academics" }
                         ],
-                        links: [{ label: "View GitHub Repository", url: "https://github.com/dmbriner/alpha-phi-academics" }],
                         associations: [
                             {
                                 label: "Alpha Phi International Fraternity",
