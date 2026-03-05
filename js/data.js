@@ -292,7 +292,7 @@ window.siteData = {
                     {
                         id: "separation-to-speculation-glba",
                         title: "Separation to Speculation: How Gramm-Leach-Bliley Bolstered Deregulatory Ambition",
-                        meta: "March 2026",
+                        meta: "November 2024",
                         tag: "PDF",
                         summary: "A paper arguing that GLBA did not single-handedly cause the 2008 crisis, but codified a broader deregulatory momentum that redefined commercial banking and amplified systemic risk.",
                         description: "This paper argues that the Gramm-Leach-Bliley Act of 1999 did not independently cause the 2008 Financial Crisis, but actualized a longer deregulatory trajectory that politically and structurally redefined the commercial bank. By repealing core Glass-Steagall separations, GLBA ratified practices that had already expanded through regulatory reinterpretation, globalization pressures, and permissive monetary policy, thereby enabling speculative behavior at greater scale.",

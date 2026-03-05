@@ -117,8 +117,9 @@ textarea {
 
 .brand-tag-toggle {
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     margin: 0;
     padding: 0;
     border: 0;
@@ -134,6 +135,7 @@ textarea {
 }
 
 .brand-tag-indicator {
+    display: none;
     padding: 2px 8px;
     border: 1px solid var(--line-strong);
     border-radius: 999px;
@@ -145,6 +147,7 @@ textarea {
 }
 
 .brand-tag-toggle.is-open .brand-tag-indicator {
+    display: inline-flex;
     opacity: 1;
 }
 
