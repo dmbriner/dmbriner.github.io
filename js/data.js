@@ -24,7 +24,7 @@ window.siteData = {
         metrics: [
             {
                 value: "May 2026",
-                label: "Incoming wealth management internship",
+                label: "Incoming equity research internship",
                 tag: "Investors Trust Company",
                 href: "/resume/#experience-investors-trust-company"
             },
@@ -45,11 +45,11 @@ window.siteData = {
     resume: {
         experience: [
             {
-                role: "Incoming Wealth Management Intern",
+                role: "Incoming Equity Research Intern",
                 company: "Investors Trust Company",
                 logo: "/assets/img/logos/invtrust_logo.jpg",
                 dates: "May 2026 - August 2026",
-                description: "Incoming Summer 2026 intern in wealth management, expected to support research and investment communication workflows across client-focused teams.",
+                description: "Incoming Summer 2026 intern in equity research, expected to support research and investment communication workflows across client-focused teams.",
                 details: [
                     "Use prior equity-research work, including the UPS report from my application, as an example framework for concise, client-ready analysis.",
                     "Support wealth-management workflows through market research, portfolio context building, and investment communication materials as assigned."
