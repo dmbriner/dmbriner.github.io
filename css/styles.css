@@ -206,15 +206,21 @@ textarea {
 }
 
 .hero {
-    display: grid;
-    grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
-    gap: 48px;
-    align-items: center;
+    display: block;
     padding: 36px 0 54px;
+}
+
+.hero::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .hero-media {
     position: relative;
+    float: left;
+    width: min(38vw, 380px);
+    margin: 0 42px 24px 0;
 }
 
 .hero-media::before {
@@ -234,6 +240,10 @@ textarea {
     border-radius: 34px;
     border: 1px solid var(--line);
     box-shadow: var(--shadow);
+}
+
+.hero-content {
+    min-width: 0;
 }
 
 .eyebrow {
@@ -1050,6 +1060,12 @@ textarea {
     .hero {
         gap: 28px;
         padding-top: 18px;
+    }
+
+    .hero-media {
+        float: none;
+        width: min(100%, 380px);
+        margin: 0 0 28px;
     }
 
     .section-head,

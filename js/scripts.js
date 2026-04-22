@@ -204,7 +204,7 @@ function renderAboutPage(data) {
                 <div class="hero-media">
                     <img class="hero-image" src="${data.site.profileImage}" alt="Portrait of ${data.site.name}" />
                 </div>
-                <div>
+                <div class="hero-content">
                     <span class="eyebrow">About</span>
                     <h1 class="hero-title">${data.site.name}</h1>
                     ${bioCopy}
