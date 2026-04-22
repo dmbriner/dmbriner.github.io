@@ -270,6 +270,14 @@ textarea {
     font-size: 1.05rem;
 }
 
+.hero-copy {
+    margin: 22px 0 0;
+}
+
+.hero-copy + .hero-copy {
+    margin-top: 16px;
+}
+
 .hero-actions,
 .inline-actions,
 .social-row,

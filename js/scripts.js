@@ -139,6 +139,12 @@ function renderPage(page, data) {
 }
 
 function renderAboutPage(data) {
+    const bioParagraphs = Array.isArray(data.about.bio)
+        ? data.about.bio
+        : [data.about.bio];
+    const bioCopy = bioParagraphs
+        .map(paragraph => `<p class="hero-copy">${paragraph}</p>`)
+        .join("");
     const metricCards = (data.about.metrics || [])
         .map(
             item => `
@@ -201,7 +207,7 @@ function renderAboutPage(data) {
                 <div>
                     <span class="eyebrow">About</span>
                     <h1 class="hero-title">${data.site.name}</h1>
-                    <p class="hero-copy">${data.about.bio}</p>
+                    ${bioCopy}
                     <div class="hero-actions">
                         <a class="ghost-button" href="/portfolio/">View Portfolio</a>
                         <a class="ghost-button" href="/resume/">Open Resume</a>
