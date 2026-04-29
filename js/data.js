@@ -21,14 +21,14 @@ window.siteData = {
     ],
     about: {
         bio: [
-            "First-year student at the University of North Carolina at Chapel Hill pursuing a B.A. in Business Administration (Finance concentration), a B.A. in Physics (Quantitative Finance track), and a minor in Data Science. My interest in finance—and more broadly, the economy—began in a U.S. history course at Phillips Exeter Academy, where I encountered a question that stayed with me: how could human fear alone drive the U.S. economy to its nadir in 1929?",
+            "First-year student at the University of North Carolina at Chapel Hill pursuing a B.A. in Business Administration (Finance concentration), a B.A. in Physics (Quantitative Finance track), and a minor in Data Science. Interested in investment banking (FIG ECM) and equity L/S trading."
+        ],
+        why: [
+            "My interest in finance—and more broadly, the economy—began in a U.S. history course at Phillips Exeter Academy, where I encountered a question that stayed with me: how could human fear alone drive the U.S. economy to its nadir in 1929?",
             "Studying the Great Depression and Keynesian theory sparked a deeper curiosity about how recessions materialize, particularly the role of incentives and market behavior. That year, I authored a 20-page research paper analyzing the risk management failures underlying the 2008 financial crisis through the lens of the Dodd-Frank Act. I examined how regulatory shifts can reshape market dynamics without fundamentally altering profit motives or managerial incentives—often redirecting, rather than resolving, systemic risk.",
             "I later expanded this line of inquiry in a second paper on the Gramm-Leach-Bliley Act (GLBA), which dismantled the clean separation between commercial and investment banking established under Glass-Steagall. While many economists attribute the 2008 crisis to this repeal, my research led me to a different conclusion: GLBA was less a cause than a consequence of a broader deregulatory environment that had already eroded Glass-Steagall’s effectiveness. In this sense, GLBA represented a symptom, not the source, of systemic fragility.",
-            "These experiences solidified my interest in studying macroeconomic patterns and their effects on financial markets. I further explored this intersection during my internship at the North Carolina Chamber of Commerce, where I worked on projects related to labor market analysis and public policy. I compiled skills taxonomies across counties, evaluated workforce strength, attended General Assembly sessions, and produced weekly policy briefings. While I valued the policy exposure, I found myself most engaged when working with data—analyzing trends, building models, and extracting insights.",
-            "This experience reinforced what I had begun to recognize about myself: I am fundamentally drawn to quantitative problem-solving. Combined with my affinity for physics, my interests shifted from the managerial side of finance toward market-facing, quantitatively driven roles. To reflect this, I pursued the quantitative finance track alongside my business studies at UNC.",
-            "On campus, I have deepened these interests through finance and investment clubs, where I have developed trading strategies, conducted equity research, and analyzed IPOs and dividend performance. Along the way, I have built strong programming skills and regularly develop independent projects to test and refine my ideas. I also currently intern at Variant, where I help test fintech products. Overall, I have found particular enjoyment in designing trading strategies and building tools that streamline research processes. In many ways, improving the efficiency and rigor of my analytical workflow is as rewarding to me as the research itself.",
-            "This summer, I will be an Equity Research Intern at Investors Trust Company, where I look forward to further developing my understanding of markets and valuation.",
-            "Looking ahead, I am interested in roles at the intersection of markets and quantitative analysis, including equities trading, quantitative research, and analytically intensive areas of investment banking such as leveraged finance or restructuring. Across these paths, I am particularly drawn to work that combines rigorous modeling with a deep understanding of incentives and market behavior."
+            "This framework—regulation as redirection rather than resolution—is what drew me to FIG ECM. Post-Dodd-Frank capital requirements didn’t eliminate credit risk; they moved it. Business development companies, mortgage REITs, and specialty lenders now intermediate credit that banks once held on balance sheet, operating in regulatory gray space between SEC oversight and prudential bank regulation. ECM is where this migration becomes visible: when a BDC goes public or a specialty insurer raises follow-on equity, the market is pricing not just a business model but the regulatory arbitrage that created it. Understanding where systemic risk has migrated—and how the market values that migration—is what makes FIG ECM intellectually compelling to me.",
+            "The same pattern recognition applies to equity L/S. Regulatory changes create structural winners and losers, but the market often misprices the second-order effects. When Basel III capital requirements tighten, which banks lose share in commercial lending? Which BDCs gain it? When CECL accounting changes reserves treatment, which specialty finance companies have embedded reserve cushions the street hasn’t modeled? The ability to trace regulatory catalysts through to security-level mispricings—to connect the macro framework to the bottoms-up equity story—is the same analytical muscle. FIG ECM builds the pattern recognition; equity L/S applies it to live positioning."
         ],
         metrics: [
             {
@@ -76,7 +76,7 @@ window.siteData = {
                     "Test core product flows across the platform to catch bugs before release.",
                     "Document issues clearly and help tighten reliability across day-to-day workflows."
                 ],
-                portfolioTab: "engineering"
+                portfolioTab: "development"
             },
             {
                 role: "Tutor",
@@ -110,7 +110,7 @@ window.siteData = {
                     "Design and build a chapter-level academic database to track GPA trends, study-hour compliance, and intervention flags.",
                     "Use this data to target tutoring resources, strengthen accountability, and improve programming tied to member performance."
                 ],
-                portfolioTab: "engineering",
+                portfolioTab: "development",
                 portfolioId: "alpha-phi-academic-database"
             },
             {
@@ -171,7 +171,7 @@ window.siteData = {
                     "Assisted with outreach, branding support, and marketing planning.",
                     "Worked across business development tasks tied to growth and visibility."
                 ],
-                portfolioTab: "engineering"
+                portfolioTab: "development"
             }
         ],
         education: [
@@ -210,69 +210,6 @@ window.siteData = {
     },
     portfolio: {
         sections: [
-            {
-                key: "engineering",
-                label: "Engineering",
-                description: "Software, product, and technical workflow work grouped under a cleaner single label.",
-                items: [
-                    {
-                        id: "tickr",
-                        title: "Tickr by Dana Briner",
-                        meta: "In Progress · Product and Market Intelligence Platform",
-                        tag: "Build",
-                        description: "Tickr is an in-progress product I am building to move toward a cleaner, faster, more intuitive market research experience. It is intended to function as a modern investing and trading workspace with strong data presentation, streamlined workflows, and a more self-directed alternative to the tools I use today.",
-                        detailPath: "/portfolio/item/?id=tickr",
-                        contentType: "external-preview",
-                        embedSrc: "https://dmbriner.github.io/tickr/",
-                        embedLabel: "Tickr by Dana Briner Preview",
-                        links: [
-                            { label: "Open Live Preview", url: "https://dmbriner.github.io/tickr/" },
-                            { label: "View GitHub Repository", url: "https://github.com/dmbriner/tickr" }
-                        ]
-                    },
-                    {
-                        id: "alpha-phi-academic-database",
-                        title: "Alpha Phi Academic Operations Database",
-                        logo: "/assets/img/logos/alpha-phi-international-fraternity.png",
-                        meta: "In Progress · Director of Academics Workflow Build",
-                        tag: "Build",
-                        description: "An in-progress internal platform where members upload and view course files, while chapter course reviews automatically flow into an exportable Excel-ready recommendations workflow.",
-                        detailPath: "/portfolio/item/?id=alpha-phi-academic-database",
-                        contentType: "external-preview",
-                        embedSrc: "https://dmbriner.github.io/alpha-phi-academics/",
-                        embedLabel: "Alpha Phi Academics Preview",
-                        links: [
-                            { label: "Open Live Preview", url: "https://dmbriner.github.io/alpha-phi-academics/" },
-                            { label: "View GitHub Repository", url: "https://github.com/dmbriner/alpha-phi-academics" }
-                        ],
-                        associations: [
-                            {
-                                label: "Alpha Phi International Fraternity",
-                                href: "/resume/#experience-alpha-phi-international-fraternity",
-                                logo: "/assets/img/logos/alpha-phi-international-fraternity.png"
-                            }
-                        ]
-                    },
-                    {
-                        id: "openbb-terminal-workflow",
-                        title: "OpenBB Terminal Workflow",
-                        logo: "/assets/img/logos/openbb.png",
-                        meta: "In Progress · Market Data and Research Tooling",
-                        tag: "Terminal",
-                        description: "I installed and used OpenBB through Python as a free Bloomberg-style terminal for market research, screening, and data access. I am now using that experience as a practical foundation for building a more tailored terminal and research environment of my own.",
-                        detailPath: "/portfolio/item/?id=openbb-terminal-workflow",
-                        contentType: "note",
-                        detailBody: [
-                            "This workflow began as a practical way to access market data, screening tools, and research functionality without relying on expensive institutional software.",
-                            "Using OpenBB in Python gave me a clear view of what I value most in a terminal workflow: speed, breadth of data access, and a cleaner path from information gathering to decision-making.",
-                            "That experience now informs the product direction behind the tools I am building for myself."
-                        ],
-                        links: [
-                            { label: "View GitHub Profile", url: "https://github.com/dmbriner" }
-                        ]
-                    }
-                ]
-            },
             {
                 key: "valuation",
                 label: "Valuation",
@@ -418,6 +355,69 @@ window.siteData = {
                                 href: "/resume/#education-phillips-exeter-academy",
                                 logo: "/assets/img/logos/phillips-exeter-academy.png"
                             }
+                        ]
+                    }
+                ]
+            },
+            {
+                key: "development",
+                label: "Development",
+                description: "Software, product, and technical workflow work grouped under a cleaner single label.",
+                items: [
+                    {
+                        id: "tickr",
+                        title: "Tickr by Dana Briner",
+                        meta: "In Progress · Product and Market Intelligence Platform",
+                        tag: "Build",
+                        description: "Tickr is an in-progress product I am building to move toward a cleaner, faster, more intuitive market research experience. It is intended to function as a modern investing and trading workspace with strong data presentation, streamlined workflows, and a more self-directed alternative to the tools I use today.",
+                        detailPath: "/portfolio/item/?id=tickr",
+                        contentType: "external-preview",
+                        embedSrc: "https://dmbriner.github.io/tickr/",
+                        embedLabel: "Tickr by Dana Briner Preview",
+                        links: [
+                            { label: "Open Live Preview", url: "https://dmbriner.github.io/tickr/" },
+                            { label: "View GitHub Repository", url: "https://github.com/dmbriner/tickr" }
+                        ]
+                    },
+                    {
+                        id: "alpha-phi-academic-database",
+                        title: "Alpha Phi Academic Operations Database",
+                        logo: "/assets/img/logos/alpha-phi-international-fraternity.png",
+                        meta: "In Progress · Director of Academics Workflow Build",
+                        tag: "Build",
+                        description: "An in-progress internal platform where members upload and view course files, while chapter course reviews automatically flow into an exportable Excel-ready recommendations workflow.",
+                        detailPath: "/portfolio/item/?id=alpha-phi-academic-database",
+                        contentType: "external-preview",
+                        embedSrc: "https://dmbriner.github.io/alpha-phi-academics/",
+                        embedLabel: "Alpha Phi Academics Preview",
+                        links: [
+                            { label: "Open Live Preview", url: "https://dmbriner.github.io/alpha-phi-academics/" },
+                            { label: "View GitHub Repository", url: "https://github.com/dmbriner/alpha-phi-academics" }
+                        ],
+                        associations: [
+                            {
+                                label: "Alpha Phi International Fraternity",
+                                href: "/resume/#experience-alpha-phi-international-fraternity",
+                                logo: "/assets/img/logos/alpha-phi-international-fraternity.png"
+                            }
+                        ]
+                    },
+                    {
+                        id: "openbb-terminal-workflow",
+                        title: "OpenBB Terminal Workflow",
+                        logo: "/assets/img/logos/openbb.png",
+                        meta: "In Progress · Market Data and Research Tooling",
+                        tag: "Terminal",
+                        description: "I installed and used OpenBB through Python as a free Bloomberg-style terminal for market research, screening, and data access. I am now using that experience as a practical foundation for building a more tailored terminal and research environment of my own.",
+                        detailPath: "/portfolio/item/?id=openbb-terminal-workflow",
+                        contentType: "note",
+                        detailBody: [
+                            "This workflow began as a practical way to access market data, screening tools, and research functionality without relying on expensive institutional software.",
+                            "Using OpenBB in Python gave me a clear view of what I value most in a terminal workflow: speed, breadth of data access, and a cleaner path from information gathering to decision-making.",
+                            "That experience now informs the product direction behind the tools I am building for myself."
+                        ],
+                        links: [
+                            { label: "View GitHub Profile", url: "https://github.com/dmbriner" }
                         ]
                     }
                 ]

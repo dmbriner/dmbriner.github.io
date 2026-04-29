@@ -145,6 +145,10 @@ function renderAboutPage(data) {
     const bioCopy = bioParagraphs
         .map(paragraph => `<p class="hero-copy">${paragraph}</p>`)
         .join("");
+    const whyParagraphs = Array.isArray(data.about.why) ? data.about.why : [];
+    const whyCopy = whyParagraphs
+        .map(paragraph => `<p class="section-copy">${paragraph}</p>`)
+        .join("");
     const metricCards = (data.about.metrics || [])
         .map(
             item => `
@@ -219,6 +223,17 @@ function renderAboutPage(data) {
                     </div>
                 </div>
             </section>
+
+            ${whyCopy ? `
+            <section class="section">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Why</span>
+                        <h2 class="section-title">Background and perspective.</h2>
+                    </div>
+                </div>
+                ${whyCopy}
+            </section>` : ""}
 
             <section class="section">
                 <div class="section-head">

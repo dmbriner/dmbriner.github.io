@@ -288,6 +288,14 @@ textarea {
     margin-top: 16px;
 }
 
+.section-copy {
+    margin: 0;
+}
+
+.section-copy + .section-copy {
+    margin-top: 16px;
+}
+
 .hero-actions,
 .inline-actions,
 .social-row,
